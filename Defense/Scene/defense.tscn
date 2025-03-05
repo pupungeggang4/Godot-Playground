@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv7youeofauml"]
+
+[ext_resource type="Script" uid="uid://cpae8pj3vdf4q" path="res://Script/defense.gd" id="1_ic810"]
+[ext_resource type="PackedScene" uid="uid://dbymmhdvuip0u" path="res://Scene/Window/start.tscn" id="2_pwfxc"]
+
+[node name="Defense" type="Node2D"]
+script = ExtResource("1_ic810")
+
+[node name="Start" parent="." instance=ExtResource("2_pwfxc")]
+position = Vector2(160, 80)
