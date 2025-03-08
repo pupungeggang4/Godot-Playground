@@ -16,3 +16,11 @@ func handle_input():
             if Physics.point_inside_rect(mouse, rect_button_start):
                 GlobalVar.state = ""
                 get_node("UI/Window/Start").hide()
+                start_game()
+                
+func start_game():
+    var node_field = get_node("Field")
+    for i in range(4):
+        var spawn = load("res://Scene/Thing/spawn.tscn").instantiate()
+        spawn.position = Vector2(800, 240 + i * 80)
+        node_field.get_node("Spawn").add_child(spawn)

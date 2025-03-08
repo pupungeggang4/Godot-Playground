@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://crhqc3buyacpg"]
+
+[ext_resource type="FontFile" uid="uid://qqiy8ct7ai3r" path="res://Font/neodgm.ttf" id="1_0hfdl"]
+
+[resource]
+default_font = ExtResource("1_0hfdl")
+default_font_size = 32

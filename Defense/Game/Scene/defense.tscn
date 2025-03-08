@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv7youeofauml"]
+
+[ext_resource type="Script" uid="uid://cpae8pj3vdf4q" path="res://Script/defense.gd" id="1_ic810"]
+[ext_resource type="PackedScene" uid="uid://dbymmhdvuip0u" path="res://Scene/Window/start.tscn" id="2_pwfxc"]
+[ext_resource type="Script" uid="uid://cyssx7x3p47ol" path="res://Script/player.gd" id="3_4g4ur"]
+[ext_resource type="Script" uid="uid://bhsfrb7x4hfat" path="res://Script/ui_handle.gd" id="4_sverw"]
+[ext_resource type="Theme" uid="uid://crhqc3buyacpg" path="res://Resource/neodgm_32.tres" id="5_3uub6"]
+[ext_resource type="Texture2D" uid="uid://c78jb0posqhee" path="res://Image/IconLife.png" id="6_cwaim"]
+
+[node name="Defense" type="Node2D"]
+script = ExtResource("1_ic810")
+
+[node name="Field" type="Node2D" parent="."]
+
+[node name="Spawn" type="Node2D" parent="Field"]
+
+[node name="Unit" type="Node2D" parent="Field"]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("3_4g4ur")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("4_sverw")
+
+[node name="Wave" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lower" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IconLife" type="Sprite2D" parent="UI/Lower"]
+position = Vector2(60, 660)
+texture = ExtResource("6_cwaim")
+
+[node name="Life" type="Label" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 644.0
+offset_right = 120.0
+offset_bottom = 676.0
+theme = ExtResource("5_3uub6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "20"
+
+[node name="Level" type="Label" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 644.0
+offset_right = 200.0
+offset_bottom = 676.0
+theme = ExtResource("5_3uub6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lv.1"
+
+[node name="Energy" type="Label" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 644.0
+offset_right = 280.0
+offset_bottom = 676.0
+theme = ExtResource("5_3uub6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.0/8.0"
+
+[node name="EnergyBarEmpty" type="ColorRect" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 650.0
+offset_right = 440.0
+offset_bottom = 670.0
+
+[node name="EnergyBarFull" type="ColorRect" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 650.0
+offset_right = 440.0
+offset_bottom = 670.0
+color = Color(1, 0.498039, 0, 1)
+
+[node name="Hand" type="ColorRect" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 680.0
+offset_right = 840.0
+offset_bottom = 760.0
+
+[node name="ButtonGenUpgrade" type="ColorRect" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 680.0
+offset_right = 120.0
+offset_bottom = 760.0
+color = Color(0, 1, 1, 1)
+
+[node name="GenUpgrade" type="Label" parent="UI/Lower"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 684.0
+offset_right = 88.0
+offset_bottom = 716.0
+theme = ExtResource("5_3uub6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "4"
+
+[node name="Window" type="Node2D" parent="UI"]
+
+[node name="Start" parent="UI/Window" instance=ExtResource("2_pwfxc")]
+position = Vector2(160, 80)
