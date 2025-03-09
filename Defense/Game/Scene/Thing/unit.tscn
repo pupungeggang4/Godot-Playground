@@ -10,3 +10,16 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
+
+[node name="HPBarEmpty" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -30.0
+
+[node name="HPBarFull" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -30.0
+color = Color(0, 1, 0, 1)
