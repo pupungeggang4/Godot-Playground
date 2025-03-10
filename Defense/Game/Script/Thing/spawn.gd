@@ -11,4 +11,5 @@ func _process(delta: float):
 func spawn_unit():
     var unit = load("res://Scene/Thing/unit.tscn").instantiate()
     unit.position = Vector2(position.x, position.y)
+    unit.side = 1
     node_unit.add_child(unit)

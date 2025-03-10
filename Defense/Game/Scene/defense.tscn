@@ -17,6 +17,8 @@ script = ExtResource("1_ic810")
 
 [node name="Unit" type="Node2D" parent="Field"]
 
+[node name="End" type="Node2D" parent="Field"]
+
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("3_4g4ur")
 
