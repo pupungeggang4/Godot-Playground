@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalVar="*res://Script/global_var.gd"
 Physics="*res://Script/physics.gd"
+Game="*res://Script/game.gd"
 
 [display]
 

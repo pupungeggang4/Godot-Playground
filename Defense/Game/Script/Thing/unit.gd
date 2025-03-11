@@ -11,9 +11,10 @@ func _ready():
     pass
 
 func _process(delta: float):
-    move(delta)
-    handle_death()
-    handle_hp_bar()
+    if GlobalVar.state == "":
+        move(delta)
+        handle_death()
+        handle_hp_bar()
 
 func move(delta):
     position.x -= speed * delta

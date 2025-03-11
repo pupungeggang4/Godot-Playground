@@ -3,7 +3,7 @@ extends Node2D
 @onready var node_unit = get_tree().current_scene.get_node("Field/Unit")
 
 func _ready():
-    spawn_unit()
+    pass
 
 func _process(delta: float):
     pass
