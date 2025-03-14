@@ -37,8 +37,6 @@ mouse_left={
 
 [rendering]
 
-rendering_device/driver.windows="d3d12"
-rendering_device/fallback_to_opengl3=false
 gl_compatibility/driver.windows="opengl3_angle"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
