@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 @export var click_state = ""
+@export var selected_card = -1
+
+@export var hand = [120, 680, 80, 80]
 
 @onready var node_player = get_tree().current_scene.get_node("Player")
 @onready var node_field = get_tree().current_scene.get_node("Field")
@@ -12,7 +15,13 @@ extends CanvasLayer
 @onready var node_energy_bar_empty = get_node("Lower/EnergyBarEmpty")
 @onready var node_energy_bar_full = get_node("Lower/EnergyBarFull")
 
+@onready var node_button_bounce = get_node("Top/ButtonBounce")
 @onready var node_button_gen_upgrade = get_node("Lower/ButtonGenUpgrade")
+
+@onready var node_hand = get_node("Hand")
+
+func _ready():
+    pass
 
 func _process(delta: float):
     handle_input()
@@ -30,10 +39,11 @@ func _process(delta: float):
         node_text_gen_upgrade.text = "Max"
 
 func handle_input():
-    if GlobalVar.state == "":
-        if click_state == "":
-            if Input.is_action_just_released("mouse_left"):
-                var mouse = get_viewport().get_mouse_position()
+    if Input.is_action_just_released("mouse_left"):
+        var mouse = get_viewport().get_mouse_position()
+        
+        if GlobalVar.state == "":
+            if click_state == "":
                 if Physics.point_inside_rect(mouse, node_button_gen_upgrade.get_rect()):
                     if node_player.energy > node_player.gen_upgrade and node_player.gen_level < node_player.gen_level_max:
                         node_player.energy -= node_player.gen_upgrade
@@ -41,3 +51,13 @@ func handle_input():
                         node_player.energy_gen += 0.2
                         node_player.energy_max += 2
                         node_player.gen_upgrade += 2
+                
+                for i in range(8):
+                    var hand_rect = [hand[0] + hand[2] * i, hand[1], hand[2], hand[3]]
+                    if Physics.point_inside_rect_ui(mouse, hand_rect):
+                        print(i)
+                        
+            elif click_state == "hand":
+                var row = int((mouse.x - 320) / 80)
+                var col = int((mouse.y - 200) / 80)
+                print(row, col)

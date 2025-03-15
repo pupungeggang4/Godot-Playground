@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var hand = []
+@export var deck = []
 
 @export var energy = 4.0
 @export var energy_max = 8.0
@@ -14,9 +15,13 @@ extends Node2D
 
 func _ready():
     hand = []
+    deck = []
     
 func _process(delta: float):
     if GlobalVar.state == "":
         energy += energy_gen * delta
         if energy > energy_max:
             energy = energy_max
+            
+func play_card(card):
+    pass

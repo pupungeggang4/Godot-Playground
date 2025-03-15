@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv7youeofauml"]
+[gd_scene load_steps=10 format=3 uid="uid://bv7youeofauml"]
 
 [ext_resource type="Script" uid="uid://cpae8pj3vdf4q" path="res://Script/defense.gd" id="1_ic810"]
 [ext_resource type="PackedScene" uid="uid://dbymmhdvuip0u" path="res://Scene/Window/start.tscn" id="2_pwfxc"]
 [ext_resource type="Script" uid="uid://cyssx7x3p47ol" path="res://Script/player.gd" id="3_4g4ur"]
+[ext_resource type="Texture2D" uid="uid://db6wr087dnsmt" path="res://Image/Bounce.png" id="4_7yvli"]
 [ext_resource type="Script" uid="uid://bhsfrb7x4hfat" path="res://Script/ui_handle.gd" id="4_sverw"]
 [ext_resource type="Theme" uid="uid://crhqc3buyacpg" path="res://Resource/neodgm_32.tres" id="5_3uub6"]
 [ext_resource type="Texture2D" uid="uid://dv7lnwmp15yaf" path="res://Image/IconEnergy.png" id="6_1hwwa"]
 [ext_resource type="Texture2D" uid="uid://c78jb0posqhee" path="res://Image/IconLife.png" id="6_cwaim"]
+[ext_resource type="PackedScene" uid="uid://b48e5b8nxifm6" path="res://Scene/Thing/card.tscn" id="8_cbq7o"]
 
 [node name="Defense" type="Node2D"]
 script = ExtResource("1_ic810")
@@ -30,6 +32,23 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Top" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBounce" type="ColorRect" parent="UI/Top"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 120.0
+
+[node name="Bounce" type="Sprite2D" parent="UI/Top"]
+position = Vector2(80, 80)
+texture = ExtResource("4_7yvli")
 
 [node name="Lower" type="Control" parent="UI"]
 layout_mode = 3
@@ -115,6 +134,15 @@ theme = ExtResource("5_3uub6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "4"
+
+[node name="Hand" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Card" parent="UI/Hand" instance=ExtResource("8_cbq7o")]
+position = Vector2(120, 680)
 
 [node name="Window" type="Node2D" parent="UI"]
 

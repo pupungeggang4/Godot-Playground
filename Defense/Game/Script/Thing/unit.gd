@@ -17,7 +17,8 @@ func _process(delta: float):
         handle_hp_bar()
 
 func move(delta):
-    position.x -= speed * delta
+    if side == 1:
+        position.x -= speed * delta
 
 func handle_hp_bar():
     node_hp_bar.size.x = hp / hp_max * 64.0
