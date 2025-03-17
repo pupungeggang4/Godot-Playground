@@ -4,11 +4,13 @@ var rect_button_start
 var time = 0
 var wave = [[2, [1, 1, 1]], [2.2, [1, 1, 1]], [2.4, [1, 1, 1]], [4, [1, 1, 1]], [4.2, [1, 1, 1]], [4.4, [1, 1, 1]], [6, [1, 1, 1]], [8, [1, 1, 1]]]
 var spawners = []
+
 @onready var rnd = RandomNumberGenerator.new()
+@onready var node_player = get_node("Player")
+@onready var node_ui_hand = get_node("UI/Hand")
 
 func _ready():
     rect_button_start = get_node("UI/Window/Start/ColorRect").get_global_rect()
-    print(rect_button_start.size)
 
 func _process(delta: float):
     if GlobalVar.state == "":
@@ -33,6 +35,13 @@ func handle_input():
                 
 func start_game():
     var node_field = get_node("Field")
+    var c = load("res://Scene/Thing/card.tscn").instantiate()
+    node_player.hand.append(c)
+    node_ui_hand.add_child(c)
+    c = load("res://Scene/Thing/card.tscn").instantiate()
+    node_player.hand.append(c)
+    node_ui_hand.add_child(c)
+    
     for i in range(4):
         var spawn = load("res://Scene/Thing/spawn.tscn").instantiate()
         spawn.position = Vector2(1000, 240 + i * 80)
@@ -41,4 +50,5 @@ func start_game():
         var end = load("res://Scene/Thing/end.tscn").instantiate()
         end.position = Vector2(280, 240 + i * 80)
         node_field.get_node("End").add_child(end)
+        
     time = 0

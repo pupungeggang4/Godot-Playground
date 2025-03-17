@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv7youeofauml"]
+[gd_scene load_steps=9 format=3 uid="uid://bv7youeofauml"]
 
 [ext_resource type="Script" uid="uid://cpae8pj3vdf4q" path="res://Script/defense.gd" id="1_ic810"]
 [ext_resource type="PackedScene" uid="uid://dbymmhdvuip0u" path="res://Scene/Window/start.tscn" id="2_pwfxc"]
@@ -8,7 +8,6 @@
 [ext_resource type="Theme" uid="uid://crhqc3buyacpg" path="res://Resource/neodgm_32.tres" id="5_3uub6"]
 [ext_resource type="Texture2D" uid="uid://dv7lnwmp15yaf" path="res://Image/IconEnergy.png" id="6_1hwwa"]
 [ext_resource type="Texture2D" uid="uid://c78jb0posqhee" path="res://Image/IconLife.png" id="6_cwaim"]
-[ext_resource type="PackedScene" uid="uid://b48e5b8nxifm6" path="res://Scene/Thing/card.tscn" id="8_cbq7o"]
 
 [node name="Defense" type="Node2D"]
 script = ExtResource("1_ic810")
@@ -140,9 +139,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Card" parent="UI/Hand" instance=ExtResource("8_cbq7o")]
-position = Vector2(120, 680)
 
 [node name="Window" type="Node2D" parent="UI"]
 

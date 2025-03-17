@@ -6,7 +6,7 @@
 [node name="Unit" type="Node2D"]
 script = ExtResource("1_iqq80")
 
-[node name="Monster001" type="Sprite2D" parent="."]
+[node name="Image" type="Sprite2D" parent="."]
 texture = ExtResource("2_i8xqt")
 
 [node name="HPBarEmpty" type="ColorRect" parent="."]

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var hp = 20.0
 @export var hp_max = 20.0
-@export var speed = 200.0
+@export var speed = 32.0
 @export var side = 0
 
 @onready var node_hp_bar = get_node("HPBarFull")

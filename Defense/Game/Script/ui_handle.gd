@@ -24,8 +24,10 @@ func _ready():
     pass
 
 func _process(delta: float):
+    display()
     handle_input()
     
+func display():
     node_text_life.text = "{0}".format([node_player.life])
     node_text_level.text = "Lv.{0}".format([node_player.gen_level])
     node_text_energy.text = "{0}/{1}".format(["%0.1f" % node_player.energy, node_player.energy_max])
@@ -37,6 +39,10 @@ func _process(delta: float):
         node_text_gen_upgrade.text = "{0}".format([node_player.gen_upgrade])
     else:
         node_text_gen_upgrade.text = "Max"
+        
+    for i in range(len(node_player.hand)):
+        node_player.hand[i].position.x = 120 + 80 * i
+        node_player.hand[i].position.y = 680
 
 func handle_input():
     if Input.is_action_just_released("mouse_left"):
@@ -52,12 +58,15 @@ func handle_input():
                         node_player.energy_max += 2
                         node_player.gen_upgrade += 2
                 
-                for i in range(8):
+                for i in range(len(node_player.hand)):
                     var hand_rect = [hand[0] + hand[2] * i, hand[1], hand[2], hand[3]]
                     if Physics.point_inside_rect_ui(mouse, hand_rect):
-                        print(i)
+                        selected_card = i
+                        click_state = "hand"
                         
             elif click_state == "hand":
-                var row = int((mouse.x - 320) / 80)
-                var col = int((mouse.y - 200) / 80)
-                print(row, col)
+                var col = int((mouse.x - 320) / 80)
+                var row = int((mouse.y - 200) / 80)
+                node_player.play_card(selected_card, row, col)
+                selected_card = -1
+                click_state = ""
