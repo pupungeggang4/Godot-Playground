@@ -128,6 +128,30 @@ offset_right = 1240.0
 offset_bottom = 80.0
 color = Color(0, 1, 1, 1)
 
+[node name="Inventory" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Inventory"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 200.0
+offset_right = 1160.0
+offset_bottom = 360.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Inventory"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 440.0
+offset_right = 1160.0
+offset_bottom = 600.0
+
+[node name="Deck" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="IconEnergy" type="Sprite2D" parent="."]
 position = Vector2(747, 70)
 texture = ExtResource("3_xwcet")
