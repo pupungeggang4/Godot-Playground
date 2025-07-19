@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://m1dkhbvl5ij6"]
+
+[ext_resource type="PackedScene" uid="uid://b0iqt1kusnkxc" path="res://model/kart.gltf" id="1_jabsu"]
+
+[node name="Race" type="Node3D"]
+
+[node name="Kart" parent="." instance=ExtResource("1_jabsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226939, -1.19209e-07, 1.7378)
+
+[node name="Kart2" parent="." instance=ExtResource("1_jabsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35655, 0, 0.6251)
