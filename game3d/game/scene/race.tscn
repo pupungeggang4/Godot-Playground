@@ -1,11 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://m1dkhbvl5ij6"]
+[gd_scene load_steps=9 format=3 uid="uid://m1dkhbvl5ij6"]
 
 [ext_resource type="PackedScene" uid="uid://b0iqt1kusnkxc" path="res://model/kart.gltf" id="1_jabsu"]
+[ext_resource type="Script" uid="uid://bvs3l25dmhfig" path="res://script/camera_3d.gd" id="2_am847"]
+[ext_resource type="Script" uid="uid://bb4feqayag2wn" path="res://script/kart.gd" id="2_sbpdb"]
+[ext_resource type="PackedScene" uid="uid://bths24w7a1kx3" path="res://scene/o1.tscn" id="3_2nr0m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jabsu"]
+
+[sub_resource type="Sky" id="Sky_am847"]
+sky_material = SubResource("ProceduralSkyMaterial_jabsu")
+
+[sub_resource type="Environment" id="Environment_2nr0m"]
+background_mode = 2
+sky = SubResource("Sky_am847")
+ambient_light_source = 3
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sbpdb"]
 
 [node name="Race" type="Node3D"]
 
 [node name="Kart" parent="." instance=ExtResource("1_jabsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226939, -1.19209e-07, 1.7378)
+script = ExtResource("2_sbpdb")
 
-[node name="Kart2" parent="." instance=ExtResource("1_jabsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35655, 0, 0.6251)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 0, 0.557929, -1.58136)
+script = ExtResource("2_am847")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65522, 1.25069, -1.85778)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2nr0m")
+camera_attributes = SubResource("CameraAttributesPractical_sbpdb")
+
+[node name="Node3D" parent="." instance=ExtResource("3_2nr0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99947, 0, 10.0381)
+
+[node name="Node3D2" parent="." instance=ExtResource("3_2nr0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62471, 0, 2.8529)
