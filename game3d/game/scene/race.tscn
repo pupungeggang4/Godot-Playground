@@ -20,18 +20,19 @@ ambient_light_source = 3
 [sub_resource type="Curve3D" id="Curve3D_sbpdb"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -61.3442, 0, -65.0939, 0, 0, 0, 0, 0, 0, -57.9287, 0, 64.8788, 0, 0, 0, 0, 0, 0, 0.162739, 0, 63.0889, 0, 0, 0, 0, 0, 0, 0, 0, -27.6325, 0, 0, 0, 0, 0, 0, -31.3569, 0, -114.415),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.334, 0, 0.084, -1.51588, -0.165031, 11.5586, 1.516, 0, -11.559, -0.167, 0, -36.169, -7.573, 0, 8.835, 7.57324, 0.126138, -8.83458, 23.982, 0, -74.673, -14.3051, 0.0600656, -4.20694, 14.305, 0, 4.207, 112.757, 0, -77.197, -9.25623, 0.19221, -13.4622, 9.256, 0, 13.462, 151.045, 0.627686, -43.9625, 4.20737, 0.240263, -16.8278, -4.20737, -0.240263, 16.8278, 167.453, -0.399437, 27.9762, 15.988, 0.144158, -10.0967, -15.988, -0.144158, 10.0967, 134.215, -0.976067, 68.3628, 31.135, 0, 2.524, -31.1345, 0.0360396, -2.52417, 84.147, 0, 88.977, 17.671, 0, 10.517, -17.6709, 0.150164, -10.5174, 64.373, 0, 41.859, 20.9693, 1.08526, -3.34075, -20.9693, -1.08526, 3.34075, 12.8157, -0.480872, 52.6749),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 10
 
 [node name="Race" type="Node3D"]
 
 [node name="Kart" parent="." instance=ExtResource("1_jabsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0230856, 0, 0)
 script = ExtResource("2_sbpdb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.74228e-08, 0.258819, -0.965926, 0, 0.557929, -1.58136)
+transform = Transform3D(-1, -4.37114e-08, 7.57104e-08, 0, 0.866026, 0.5, -8.74228e-08, 0.5, -0.866026, 0, 0.557929, -1.58136)
 script = ExtResource("2_am847")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
@@ -41,20 +42,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65522, 1.25069, -1.85778)
 environment = SubResource("Environment_2nr0m")
 camera_attributes = SubResource("CameraAttributesPractical_sbpdb")
 
-[node name="Node3D" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99947, 0, 10.0381)
-
 [node name="Node3D3" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4552, 0, 5.21152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89345, 0, 2.68433)
 
 [node name="Node3D2" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62471, 0, 2.8529)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07013, 0, 2.8529)
 
 [node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999898, 0.0142763, 0, -0.0142763, 0.999898, 0, -1, 0)
 curve = SubResource("Curve3D_sbpdb")
 
 [node name="CSGMesh3D" type="CSGPolygon3D" parent="Path3D"]
-polygon = PackedVector2Array(-2.02868, -0.680711, -1.93427, -0.373067, 1.69128, -0.328346, 1.76874, -0.776806)
+polygon = PackedVector2Array(-7.11397, -0.891769, -7.03962, -0.370158, 8.02792, -0.342586, 8.2562, -0.974309)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
