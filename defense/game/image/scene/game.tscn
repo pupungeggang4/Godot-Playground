@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bch4cewr8q6hf"]
+
+[ext_resource type="Texture2D" uid="uid://caivd1qpct408" path="res://image/core.png" id="1_ojb5e"]
+[ext_resource type="Texture2D" uid="uid://fiv0ihmcbmbu" path="res://image/player.png" id="2_mt8ld"]
+
+[node name="game" type="Node2D"]
+
+[node name="Core" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_ojb5e")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(207, 491)
+texture = ExtResource("2_mt8ld")
