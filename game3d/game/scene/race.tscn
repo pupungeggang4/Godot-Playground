@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://m1dkhbvl5ij6"]
+[gd_scene load_steps=12 format=3 uid="uid://m1dkhbvl5ij6"]
 
 [ext_resource type="PackedScene" uid="uid://b0iqt1kusnkxc" path="res://model/kart.gltf" id="1_jabsu"]
 [ext_resource type="Script" uid="uid://bvs3l25dmhfig" path="res://script/camera_3d.gd" id="2_am847"]
 [ext_resource type="Script" uid="uid://bb4feqayag2wn" path="res://script/kart.gd" id="2_sbpdb"]
 [ext_resource type="PackedScene" uid="uid://bths24w7a1kx3" path="res://scene/o1.tscn" id="3_2nr0m"]
+[ext_resource type="Texture2D" uid="uid://bollvjf458p6o" path="res://road.png" id="5_r1e52"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jabsu"]
 
@@ -20,10 +21,16 @@ ambient_light_source = 3
 [sub_resource type="Curve3D" id="Curve3D_sbpdb"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.334, 0, 0.084, -1.51588, -0.165031, 11.5586, 1.516, 0, -11.559, -0.167, 0, -36.169, -7.573, 0, 8.835, 7.57324, 0.126138, -8.83458, 23.982, 0, -74.673, -14.3051, 0.0600656, -4.20694, 14.305, 0, 4.207, 112.757, 0, -77.197, -9.25623, 0.19221, -13.4622, 9.256, 0, 13.462, 151.045, 0.627686, -43.9625, 4.20737, 0.240263, -16.8278, -4.20737, -0.240263, 16.8278, 167.453, -0.399437, 27.9762, 15.988, 0.144158, -10.0967, -15.988, -0.144158, 10.0967, 134.215, -0.976067, 68.3628, 31.135, 0, 2.524, -31.1345, 0.0360396, -2.52417, 84.147, 0, 88.977, 17.671, 0, 10.517, -17.6709, 0.150164, -10.5174, 64.373, 0, 41.859, 20.9693, 1.08526, -3.34075, -20.9693, -1.08526, 3.34075, 12.8157, -0.480872, 52.6749),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.789, 0, 3.648, -68.303, 0, 14.04, 68.303, 0, -14.04, 75.447, 0, 138.322, 4.183, 0, 62.035, -4.183, 0, -62.035, 270.421, 0, -51.303, 130.248, 0, 2.09, -130.248, 0, -2.09, 132.734, 0, -256.646, 73.8673, 2.52724e-05, 0.48436, -73.8673, -2.52724e-05, -0.48436, -187.872, 0, -255.082, -2.536, 0, -78.727, 2.536, 0, 78.727, -325.609, 0, -137.849, -31.983, 0, -19.687, 31.983, 0, 19.687, -27.047, 0, -123.823),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 10
+point_count = 7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1e52"]
+albedo_texture = ExtResource("5_r1e52")
+uv1_scale = Vector3(0.1, 8, 10)
+texture_filter = 0
+point_size = 128.0
 
 [node name="Race" type="Node3D"]
 
@@ -43,17 +50,21 @@ environment = SubResource("Environment_2nr0m")
 camera_attributes = SubResource("CameraAttributesPractical_sbpdb")
 
 [node name="Node3D3" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89345, 0, 2.68433)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.443, -2, 10.2519)
 
 [node name="Node3D2" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07013, 0, 2.8529)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.713, -2, 9.55428)
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999898, 0.0142763, 0, -0.0142763, 0.999898, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 curve = SubResource("Curve3D_sbpdb")
 
-[node name="CSGMesh3D" type="CSGPolygon3D" parent="Path3D"]
-polygon = PackedVector2Array(-7.11397, -0.891769, -7.03962, -0.370158, 8.02792, -0.342586, 8.2562, -0.974309)
+[node name="CSGBox3D" type="CSGBox3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44184, -1.72661, 3.51402)
+size = Vector3(22, 1, 2)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(-10, -0.8, -10, -0.4, 10, -0.4, 10, -0.8)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -65,3 +76,4 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+material = SubResource("StandardMaterial3D_r1e52")
