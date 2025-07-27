@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://m1dkhbvl5ij6"]
+[gd_scene load_steps=14 format=3 uid="uid://m1dkhbvl5ij6"]
 
 [ext_resource type="PackedScene" uid="uid://b0iqt1kusnkxc" path="res://model/kart.gltf" id="1_jabsu"]
 [ext_resource type="Script" uid="uid://bvs3l25dmhfig" path="res://script/camera_3d.gd" id="2_am847"]
 [ext_resource type="Script" uid="uid://bb4feqayag2wn" path="res://script/kart.gd" id="2_sbpdb"]
 [ext_resource type="PackedScene" uid="uid://bths24w7a1kx3" path="res://scene/o1.tscn" id="3_2nr0m"]
 [ext_resource type="Texture2D" uid="uid://bollvjf458p6o" path="res://road.png" id="5_r1e52"]
+[ext_resource type="Script" uid="uid://dgsj0qvux2tjl" path="res://script/label.gd" id="6_l02fv"]
+[ext_resource type="Theme" uid="uid://df2kkfx6fbkqt" path="res://resource/font_neodgm.tres" id="6_pg24x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jabsu"]
 
@@ -77,3 +79,26 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_r1e52")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 660.0
+offset_right = 140.0
+offset_bottom = 700.0
+
+[node name="Label" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 664.0
+offset_right = 64.0
+offset_bottom = 687.0
+theme = ExtResource("6_pg24x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("6_l02fv")
