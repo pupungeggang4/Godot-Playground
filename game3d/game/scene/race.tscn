@@ -61,14 +61,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.713, -2, 9.55428)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 curve = SubResource("Curve3D_sbpdb")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44184, -1.72661, 3.51402)
-size = Vector3(22, 1, 2)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
-polygon = PackedVector2Array(-10, -0.8, -10, -0.4, 10, -0.4, 10, -0.8)
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+polygon = PackedVector2Array(-10, -0.4, -10, -0.5, 10, -0.5, 10, -0.4)
 mode = 2
-path_node = NodePath("..")
+path_node = NodePath("../Path3D")
 path_interval_type = 0
 path_interval = 1.0
 path_simplify_angle = 0.0
@@ -79,6 +76,10 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_r1e52")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44184, -2.72661, 3.51402)
+size = Vector3(22, 1, 2)
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
