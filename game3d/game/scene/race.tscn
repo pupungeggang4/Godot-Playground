@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://m1dkhbvl5ij6"]
+[gd_scene load_steps=15 format=3 uid="uid://m1dkhbvl5ij6"]
 
-[ext_resource type="PackedScene" uid="uid://b0iqt1kusnkxc" path="res://model/kart.gltf" id="1_jabsu"]
 [ext_resource type="Script" uid="uid://bvs3l25dmhfig" path="res://script/camera_3d.gd" id="2_am847"]
-[ext_resource type="Script" uid="uid://bb4feqayag2wn" path="res://script/kart.gd" id="2_sbpdb"]
 [ext_resource type="PackedScene" uid="uid://bths24w7a1kx3" path="res://scene/o1.tscn" id="3_2nr0m"]
+[ext_resource type="PackedScene" uid="uid://cqnm2ybfg05qp" path="res://scene/kart.tscn" id="3_l02fv"]
 [ext_resource type="Texture2D" uid="uid://bollvjf458p6o" path="res://road.png" id="5_r1e52"]
 [ext_resource type="Script" uid="uid://dgsj0qvux2tjl" path="res://script/label.gd" id="6_l02fv"]
 [ext_resource type="Theme" uid="uid://df2kkfx6fbkqt" path="res://resource/font_neodgm.tres" id="6_pg24x"]
+[ext_resource type="Script" uid="uid://drjodkowvq3y1" path="res://script/time.gd" id="7_pg24x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jabsu"]
 
@@ -34,11 +34,13 @@ uv1_scale = Vector3(0.1, 8, 10)
 texture_filter = 0
 point_size = 128.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_l02fv"]
+
 [node name="Race" type="Node3D"]
 
-[node name="Kart" parent="." instance=ExtResource("1_jabsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0230856, 0, 0)
-script = ExtResource("2_sbpdb")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2nr0m")
+camera_attributes = SubResource("CameraAttributesPractical_sbpdb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, -4.37114e-08, 7.57104e-08, 0, 0.866026, 0.5, -8.74228e-08, 0.5, -0.866026, 0, 0.557929, -1.58136)
@@ -47,21 +49,15 @@ script = ExtResource("2_am847")
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65522, 1.25069, -1.85778)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2nr0m")
-camera_attributes = SubResource("CameraAttributesPractical_sbpdb")
+[node name="Kart" parent="." instance=ExtResource("3_l02fv")]
 
-[node name="Node3D3" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.443, -2, 10.2519)
+[node name="Track" type="Node3D" parent="."]
 
-[node name="Node3D2" parent="." instance=ExtResource("3_2nr0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.713, -2, 9.55428)
-
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="Track"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 curve = SubResource("Curve3D_sbpdb")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Track"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 polygon = PackedVector2Array(-10, -0.4, -10, -0.5, 10, -0.5, 10, -0.4)
 mode = 2
@@ -77,9 +73,21 @@ path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_r1e52")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="Track"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44184, -2.72661, 3.51402)
 size = Vector3(22, 1, 2)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Node3D3" parent="Map" instance=ExtResource("3_2nr0m")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.18287, -2, 3.40848)
+
+[node name="Node3D2" parent="Map" instance=ExtResource("3_2nr0m")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 13.713, -2, 3.63116)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
+transform = Transform3D(30, 0, 0, 0, 5, 0, 0, 0, 5, 2.90756, 7.05181, 3.77589)
+mesh = SubResource("BoxMesh_l02fv")
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -94,7 +102,7 @@ offset_top = 660.0
 offset_right = 140.0
 offset_bottom = 700.0
 
-[node name="Label" type="Label" parent="HUD"]
+[node name="TextSpeed" type="Label" parent="HUD"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 664.0
@@ -103,3 +111,20 @@ offset_bottom = 687.0
 theme = ExtResource("6_pg24x")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 script = ExtResource("6_l02fv")
+
+[node name="ColorRect2" type="ColorRect" parent="HUD"]
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 60.0
+
+[node name="TextTime" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 24.0
+offset_right = 1184.0
+offset_bottom = 56.0
+theme = ExtResource("6_pg24x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("7_pg24x")
