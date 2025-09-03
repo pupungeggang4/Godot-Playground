@@ -20,3 +20,9 @@ texture = ExtResource("2_33cqm")
 [node name="Crystalnormal2" type="Sprite2D" parent="."]
 position = Vector2(1008, 671)
 texture = ExtResource("2_33cqm")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
