@@ -19,6 +19,7 @@ offset_bottom = 160.0
 color = Color(1, 1, 0, 1)
 
 [node name="TextPaused" type="Label" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 24.0
 offset_right = 248.0
@@ -28,6 +29,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Paused"
 
 [node name="TextResume" type="Label" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 104.0
 offset_right = 248.0
@@ -37,6 +39,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resume"
 
 [node name="TextExit" type="Label" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 184.0
 offset_right = 248.0

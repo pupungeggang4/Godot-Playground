@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://gfvldvgp0c6k"]
+[gd_scene load_steps=7 format=3 uid="uid://gfvldvgp0c6k"]
 
 [ext_resource type="Texture2D" uid="uid://bir36b272cnq2" path="res://image/buttonright.png" id="1_11uro"]
-[ext_resource type="PackedScene" uid="uid://c5lhfsj4rqnrt" path="res://scene/field_menu.tscn" id="1_jtaya"]
 [ext_resource type="Texture2D" uid="uid://cccmvxbqrj5jg" path="res://image/buttonleft.png" id="2_qh4rb"]
 [ext_resource type="Texture2D" uid="uid://cikpnh308ebs2" path="res://image/buttonup.png" id="3_8hyyi"]
 [ext_resource type="Texture2D" uid="uid://cjmcxeba73vep" path="res://image/buttondown.png" id="4_jtaya"]
@@ -11,13 +10,6 @@
 [node name="FieldUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="FieldMenu" parent="." instance=ExtResource("1_jtaya")]
-visible = false
-offset_left = 320.0
-offset_top = 240.0
-offset_right = 320.0
-offset_bottom = 240.0
 
 [node name="Buttonright" type="TextureRect" parent="."]
 layout_mode = 0

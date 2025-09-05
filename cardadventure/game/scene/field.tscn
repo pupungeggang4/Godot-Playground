@@ -1,15 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxaey571bxdsa"]
+[gd_scene load_steps=6 format=3 uid="uid://cxaey571bxdsa"]
 
 [ext_resource type="Script" uid="uid://ci7g6ojgp4syc" path="res://script/scene/field.gd" id="1_evxyq"]
 [ext_resource type="PackedScene" uid="uid://gfvldvgp0c6k" path="res://scene/field_ui.tscn" id="1_odcg7"]
+[ext_resource type="PackedScene" uid="uid://dcwhmw0wmr0cp" path="res://scene/thing/player.tscn" id="2_galdp"]
+[ext_resource type="PackedScene" uid="uid://c5lhfsj4rqnrt" path="res://scene/field_menu.tscn" id="3_ckb0a"]
+[ext_resource type="PackedScene" uid="uid://b4jkags61wa3f" path="res://scene/thing/monster.tscn" id="4_3mvvo"]
 
 [node name="Field" type="Node2D"]
 script = ExtResource("1_evxyq")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_galdp")]
 
-[node name="FieldUI" parent="Camera2D" instance=ExtResource("1_odcg7")]
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -640.0
-offset_bottom = -360.0
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FieldMenu" parent="UI" instance=ExtResource("3_ckb0a")]
+visible = false
+offset_left = 320.0
+offset_top = 240.0
+offset_right = 320.0
+offset_bottom = 240.0
+
+[node name="FieldUI" parent="UI" instance=ExtResource("1_odcg7")]
+
+[node name="Monster" parent="." instance=ExtResource("4_3mvvo")]
+position = Vector2(381, 137)
+
+[node name="Monster2" parent="." instance=ExtResource("4_3mvvo")]
+position = Vector2(357, -181)
+
+[node name="Monster3" parent="." instance=ExtResource("4_3mvvo")]
+position = Vector2(-340, 157)
