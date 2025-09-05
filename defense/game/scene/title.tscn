@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://iltnwuqlg085"]
+[gd_scene load_steps=2 format=3 uid="uid://iltnwuqlg085"]
+
+[ext_resource type="Theme" uid="uid://bofeoieo22ksw" path="res://res/neodgm.tres" id="1_4fdtc"]
 
 [node name="Title" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 136.0
+offset_bottom = 56.0
+theme = ExtResource("1_4fdtc")
+text = "Defense"
