@@ -1,3 +1,49 @@
-[gd_scene format=3 uid="uid://b3vbdb1xclwsi"]
+[gd_scene load_steps=3 format=3 uid="uid://b3vbdb1xclwsi"]
+
+[ext_resource type="Theme" uid="uid://b6rrwguji6a3c" path="res://res/neodgm.tres" id="1_4fdtc"]
+[ext_resource type="Script" uid="uid://dxce0aop7dltv" path="res://script/scene/title.gd" id="1_hr6ky"]
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_hr6ky")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Platformer" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 158.0
+offset_bottom = 47.0
+theme = ExtResource("1_4fdtc")
+text = "Platformer Game"
+
+[node name="Button" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 1120.0
+offset_bottom = 320.0
+
+[node name="Platformer2" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 184.0
+offset_right = 424.0
+offset_bottom = 216.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Start Game"
+
+[node name="Platformer3" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 264.0
+offset_right = 424.0
+offset_bottom = 296.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Erase Data"
