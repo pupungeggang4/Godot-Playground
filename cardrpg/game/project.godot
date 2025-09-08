@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="cardrpg"
+run/main_scene="uid://bfcwvi11h7r1o"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
