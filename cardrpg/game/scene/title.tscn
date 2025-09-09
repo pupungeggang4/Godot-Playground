@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfcwvi11h7r1o"]
+[gd_scene load_steps=3 format=3 uid="uid://bfcwvi11h7r1o"]
 
 [ext_resource type="Theme" uid="uid://cdy5nqqwpi6yr" path="res://res/neodgm.tres" id="1_4fdtc"]
+[ext_resource type="Script" uid="uid://c75fdcoti2f4d" path="res://script/scene/title.gd" id="1_hr6ky"]
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_hr6ky")
 
 [node name="TextTitle" type="Label" parent="."]
 offset_left = 24.0
