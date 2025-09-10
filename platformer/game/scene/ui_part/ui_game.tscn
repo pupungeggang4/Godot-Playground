@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddnuuy44f8b36"]
+
+[ext_resource type="Texture2D" uid="uid://kgs4yvuaq227" path="res://image/buttonmenu.png" id="4_54snd"]
+
+[node name="UIGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Buttonmenu" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 40.0
+offset_right = 1240.0
+offset_bottom = 120.0
+texture = ExtResource("4_54snd")
