@@ -20,6 +20,10 @@ func handle_mouse():
             if Func.point_inside_rect_ui(mouse, UI.buttton_resume):
                 GVar.menu = false
                 get_node('UI/FieldMenu').hide()
+            elif Func.point_inside_rect_ui(mouse, UI.button_exit):
+                GVar.menu = false
+                get_node('UI/FieldMenu').hide()
+                Func.change_scene(self, 'res://scene/title.tscn', 'Title')
     
 func handle_key():
     pass
