@@ -1,6 +1,16 @@
 extends Node2D
 
 func _process(delta):
+    handle_input()
+    
+func handle_input():
+    handle_mouse()
+    handle_key()
+    
+func handle_mouse():
+    pass
+
+func handle_key():
     if GVar.menu == false:
         if Input.is_action_just_pressed('menu'):
             GVar.menu = true
