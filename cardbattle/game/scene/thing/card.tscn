@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmpv6sbm3bsqm"]
+
+[ext_resource type="Theme" uid="uid://x7f25k1c0ron" path="res://res/neodgm_32.tres" id="1_qbiym"]
+
+[node name="Card" type="Node2D"]
+
+[node name="CardMain" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="CardMain"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 240.0
+
+[node name="Image" type="ColorRect" parent="CardMain"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 31.0
+offset_right = 127.0
+offset_bottom = 92.0
+color = Color(1, 1, 0, 1)
+
+[node name="Description" type="RichTextLabel" parent="CardMain"]
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 161.0
+offset_bottom = 214.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Description
+asd
+sad
+ad
+adasd
+"
+
+[node name="Name" type="Label" parent="CardMain"]
+offset_left = 2.0
+offset_top = 100.0
+offset_right = 42.0
+offset_bottom = 123.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Name"
+
+[node name="Attack" type="Label" parent="CardMain"]
+offset_left = 3.0
+offset_top = 207.0
+offset_right = 43.0
+offset_bottom = 239.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="HP" type="Label" parent="CardMain"]
+offset_left = 116.0
+offset_top = 208.0
+offset_right = 156.0
+offset_bottom = 240.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
