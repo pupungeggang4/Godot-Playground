@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://km5j6mo8j1g5"]
+
+[node name="Collection" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBack" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0

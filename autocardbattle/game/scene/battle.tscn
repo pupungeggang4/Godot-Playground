@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpgehq5d2dibd"]
+
+[ext_resource type="PackedScene" uid="uid://cnr2ptpnjparn" path="res://scene/ui_part/ui_menu.tscn" id="1_afp2b"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonMenu" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="UIMenu" parent="UI" instance=ExtResource("1_afp2b")]
+visible = false
+layout_mode = 1
