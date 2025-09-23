@@ -17,7 +17,7 @@ offset_top = 240.0
 offset_right = 960.0
 offset_bottom = 480.0
 
-[node name="TextCollection" type="Label" parent="."]
+[node name="TextPaused" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
 offset_top = 264.0
@@ -27,7 +27,7 @@ theme = ExtResource("1_mquqh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Paused"
 
-[node name="TextCollection2" type="Label" parent="."]
+[node name="TextResume" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
 offset_top = 344.0
@@ -37,7 +37,7 @@ theme = ExtResource("1_mquqh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resume"
 
-[node name="TextCollection3" type="Label" parent="."]
+[node name="TextExit" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
 offset_top = 424.0

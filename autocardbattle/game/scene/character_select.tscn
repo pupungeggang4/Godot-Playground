@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpa5qv3gsmr6r"]
+[gd_scene load_steps=3 format=3 uid="uid://dpa5qv3gsmr6r"]
 
+[ext_resource type="Script" uid="uid://by2qwyfp0332u" path="res://script/scene/character_select.gd" id="1_iht2v"]
 [ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_mneoq"]
 
 [node name="CharacterSelect" type="Node2D"]
+script = ExtResource("1_iht2v")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -62,6 +64,22 @@ offset_right = 380.0
 offset_bottom = 520.0
 
 [node name="ButtonCharacter6" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 360.0
+offset_right = 580.0
+offset_bottom = 520.0
+
+[node name="ButtonSelected" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 160.0
+offset_right = 180.0
+offset_bottom = 320.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonStart" type="ColorRect" parent="UI"]
 layout_mode = 0
 offset_left = 1100.0
 offset_top = 620.0
