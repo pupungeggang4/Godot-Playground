@@ -11,5 +11,14 @@ const character = [
 ]
 const button_game_start = [1100, 620, 160, 80]
 
+const unit = [
+    [20, 110, 160, 160], [200, 20, 160, 160], [200, 200, 160, 160], [380, 20, 160, 160], [380, 200, 160, 160], [1100, 110, 160, 160], [920, 20, 160, 160], [920, 200, 160, 160], [740, 20, 160, 160], [740, 200, 160, 160] 
+]
+
+const card_player_start = [400, 420]
+const card_player_interval = [-40, 0]
+const card_enemy_start = [680, 420]
+const card_enemy_interval = [40, 0]
+
 const button_resume = [320, 320, 640, 80]
 const button_exit = [302, 400, 640, 80]
