@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc7c4ha71p28y"]
+
+[ext_resource type="Script" uid="uid://bchrm0kdsrjnx" path="res://script/thing/crystal.gd" id="1_o7r8h"]
+
+[node name="Crystal" type="Node2D"]
+script = ExtResource("1_o7r8h")
+
+[node name="Backgorund" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

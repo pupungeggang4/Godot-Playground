@@ -21,6 +21,8 @@ Func="*res://script/func.gd"
 GVar="*res://script/g_var.gd"
 Save="*res://script/save.gd"
 UI="*res://script/ui.gd"
+Data="*res://script/data.gd"
+GFunc="*res://script/g_func.gd"
 
 [display]
 
