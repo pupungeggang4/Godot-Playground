@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var ID = 0
 @export var card_name = 'name'
 @export var type = ''
 @export var element = ''
@@ -10,9 +11,11 @@ var effect = []
 var description = ''
 
 func _ready():
-    pass
+    var b = Card2.new()
+    print(b.a)
     
 func set_data(ID):
+    self.ID = ID
     var data = Data.card[ID].duplicate(true)
     var data_e = Data.card_e[ID]
     var data_d = Data.card_d[ID]

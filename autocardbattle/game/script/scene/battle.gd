@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var player = get_node('Player')
+@onready var enemy = get_node('Enemy')
+
 func _ready():
     var node_field = get_node('UI/Field')
     var node_card_player = get_node('UI/CardPlayer')
@@ -11,15 +14,15 @@ func _ready():
         rect.size = Vector2(UI.unit[i][2], UI.unit[i][3])
         node_field.add_child(rect)
         
-    for i in range(3, -1, -1):
+    for i in range(4, -1, -1):
         var card = load('res://scene/thing/card.tscn').instantiate()
         card.position = Vector2(UI.card_player_start[0] + UI.card_player_interval[0] * i, UI.card_player_start[1])
         node_card_player.add_child(card)
         
-    for i in range(3, -1, -1):
+    for i in range(4, -1, -1):
         var card = load('res://scene/thing/card.tscn').instantiate()
         card.position = Vector2(UI.card_enemy_start[0] + UI.card_enemy_interval[0] * i, UI.card_enemy_start[1])
-        node_card_player.add_child(card)
+        node_card_enemy.add_child(card)
 
 func _process(delta):
     handle_mouse()
@@ -41,3 +44,6 @@ func handle_mouse():
                 GVar.menu = false
                 get_node('UI/UIMenu').hide()
                 Func.change_scene(self, 'res://scene/title.tscn', 'Title')
+                
+func battle_start():
+    pass
