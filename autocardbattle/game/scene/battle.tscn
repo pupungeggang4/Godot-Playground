@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpgehq5d2dibd"]
+[gd_scene load_steps=6 format=3 uid="uid://cpgehq5d2dibd"]
 
 [ext_resource type="PackedScene" uid="uid://cnr2ptpnjparn" path="res://scene/ui_part/ui_menu.tscn" id="1_afp2b"]
 [ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_ffp3s"]
 [ext_resource type="Script" uid="uid://cb3g4hfel3e6u" path="res://script/scene/battle.gd" id="1_soyo5"]
 [ext_resource type="Script" uid="uid://dwdcrwpa8g4i5" path="res://script/thing/player.gd" id="2_0okv5"]
+[ext_resource type="Script" uid="uid://cly4f5wmmthpm" path="res://scene/enemy.gd" id="3_ebedk"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_soyo5")
@@ -12,6 +13,7 @@ script = ExtResource("1_soyo5")
 script = ExtResource("2_0okv5")
 
 [node name="Enemy" type="Node2D" parent="."]
+script = ExtResource("3_ebedk")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

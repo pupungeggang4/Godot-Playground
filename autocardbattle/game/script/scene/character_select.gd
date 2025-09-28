@@ -21,5 +21,5 @@ func handle_mouse():
                 
         if Func.point_inside_rect_ui(mouse, UI.button_game_start):
             if GVar.selected_character != -1:
-                Func.change_scene(self, 'res://scene/battle.tscn', 'Battle')
                 GFunc.generate_character(GVar.selected_character + 1)
+                Func.change_scene(self, 'res://scene/battle.tscn', 'Battle')

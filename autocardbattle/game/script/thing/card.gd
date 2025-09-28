@@ -11,8 +11,7 @@ var effect = []
 var description = ''
 
 func _ready():
-    var b = Card2.new()
-    print(b.a)
+    pass
     
 func set_data(ID):
     self.ID = ID
@@ -59,3 +58,14 @@ func apply_data_to_node():
     if type == 'unit':
         get_node('TextAttack').text = str(attack)
         get_node('TextHP').text = str(hp)
+
+func clone_from_card(card):
+    self.ID = card.ID
+    self.card_name = card.card_name
+    self.type = card.type
+    self.element = card.element
+    self.attack = card.attack
+    self.hp = card.hp
+    self.crystal = card.crystal.duplicate(true)
+    self.effect = card.effect.duplicate(true)
+    self.description = card.description

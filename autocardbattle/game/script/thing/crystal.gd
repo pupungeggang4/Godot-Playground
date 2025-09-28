@@ -17,6 +17,13 @@ func set_data(ID):
     element = data.element
     effect = data.effect
     description = data_d
+    
+func clone_from_crystal(crystal):
+    self.ID = crystal.ID
+    self.crystal_name = crystal.crystal_name
+    self.element = crystal.element
+    self.effect = crystal.effect.duplicate(true)
+    self.description = crystal.description
 
 func _process(delta):
     pass
