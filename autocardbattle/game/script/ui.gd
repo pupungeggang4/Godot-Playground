@@ -21,5 +21,7 @@ const card_player_interval = [-40, 0]
 const card_enemy_start = [680, 420]
 const card_enemy_interval = [40, 0]
 
+const button_reward_confirm = [560, 560, 160, 80]
+
 const button_resume = [320, 320, 640, 80]
 const button_exit = [302, 400, 640, 80]

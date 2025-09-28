@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0ocqfagdq6g7"]
 
-[ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_royqa"]
+[ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_qyksg"]
 
-[node name="WindowReward" type="Control"]
+[node name="Window" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,22 +17,27 @@ offset_top = 40.0
 offset_right = 1120.0
 offset_bottom = 680.0
 
-[node name="TextTitle" type="Label" parent="."]
+[node name="Reward" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextTitle" type="Label" parent="Reward"]
 layout_mode = 0
 offset_left = 184.0
 offset_top = 64.0
 offset_right = 392.0
 offset_bottom = 96.0
-theme = ExtResource("1_royqa")
+theme = ExtResource("1_qyksg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Select Reward"
 
-[node name="Select" type="Control" parent="."]
+[node name="Select" type="Control" parent="Reward"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ButtonConfirm" type="ColorRect" parent="."]
+[node name="ButtonConfirm" type="ColorRect" parent="Reward"]
 layout_mode = 0
 offset_left = 560.0
 offset_top = 560.0
@@ -40,12 +45,12 @@ offset_right = 720.0
 offset_bottom = 640.0
 color = Color(1, 1, 0, 1)
 
-[node name="TextConfirm" type="Label" parent="."]
+[node name="TextConfirm" type="Label" parent="Reward"]
 layout_mode = 0
 offset_left = 584.0
 offset_top = 584.0
 offset_right = 696.0
 offset_bottom = 616.0
-theme = ExtResource("1_royqa")
+theme = ExtResource("1_qyksg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Confirm"

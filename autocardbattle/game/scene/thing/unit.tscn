@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://1nrtoh7k1h2d" path="res://script/thing/unit.gd" id="1_np0tp"]
 
 [node name="Unit" type="Node2D"]
+visible = false
 script = ExtResource("1_np0tp")
 
 [node name="ColorRect" type="ColorRect" parent="."]

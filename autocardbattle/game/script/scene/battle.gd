@@ -2,11 +2,14 @@ extends Node2D
 
 @onready var player = get_node('Player')
 @onready var enemy = get_node('Enemy')
+var turn_num = 0
+var turn_who = 0
+var unit_list = [
+    null, null, null, null, null, null, null, null, null, null
+]
 
 func _ready():
     var node_field = get_node('UI/Field')
-    var node_card_player = get_node('UI/CardPlayer')
-    var node_card_enemy = get_node('UI/CardEnemy')
     
     for i in range(10):
         var rect = ColorRect.new()
@@ -14,17 +17,12 @@ func _ready():
         rect.size = Vector2(UI.unit[i][2], UI.unit[i][3])
         node_field.add_child(rect)
         
-    for i in range(4, -1, -1):
-        var card = load('res://scene/thing/card.tscn').instantiate()
-        card.position = Vector2(UI.card_player_start[0] + UI.card_player_interval[0] * i, UI.card_player_start[1])
-        node_card_player.add_child(card)
-        
-    for i in range(4, -1, -1):
-        var card = load('res://scene/thing/card.tscn').instantiate()
-        card.position = Vector2(UI.card_enemy_start[0] + UI.card_enemy_interval[0] * i, UI.card_enemy_start[1])
-        node_card_enemy.add_child(card)
+    get_node('/root/Battle/UI/Window').show()
 
 func _process(delta):
+    if GVar.menu == false:
+        if GVar.state == '':
+            handle_unit()
     handle_mouse()
     
 func handle_mouse():
@@ -34,6 +32,11 @@ func handle_mouse():
             if Func.point_inside_rect_ui(mouse, UI.button_menu):
                 GVar.menu = true
                 get_node('UI/UIMenu').show()
+            if GVar.state == 'reward':
+                if Func.point_inside_rect_ui(mouse, UI.button_reward_confirm):
+                    GVar.state = ''
+                    get_node('/root/Battle/UI/Window').hide()
+                    battle_start()
                 
         elif GVar.menu == true:
             if Func.point_inside_rect_ui(mouse, UI.button_resume):
@@ -46,4 +49,21 @@ func handle_mouse():
                 Func.change_scene(self, 'res://scene/title.tscn', 'Title')
                 
 func battle_start():
-    pass
+    var node_field = get_node('/root/Battle/UI/Field')
+    player.battle_start()
+    enemy.battle_start(1)
+    var unit_player = load('res://scene/thing/unit.tscn').instantiate()
+    unit_player.set_unit_from_player()
+    var unit_enemy = load('res://scene/thing/unit.tscn').instantiate()
+    unit_enemy.set_unit_from_enemy(1)
+    unit_list[0] = unit_player
+    node_field.add_child(unit_player)
+    unit_list[5] = unit_enemy
+    node_field.add_child(unit_enemy)
+    
+func handle_unit():
+    for i in range(10):
+        if unit_list[i] != null:
+            unit_list[i].show()
+            unit_list[i].position = Vector2(UI.unit[i][0], UI.unit[i][1])
+            unit_list[i].apply_data_to_node()

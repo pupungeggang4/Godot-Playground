@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqale3djxpwbb"]
+[gd_scene load_steps=4 format=3 uid="uid://dqale3djxpwbb"]
 
 [ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_qbiym"]
 [ext_resource type="Script" uid="uid://c3ycsvgmykncb" path="res://script/thing/card.gd" id="1_xpy3r"]
+[ext_resource type="PackedScene" uid="uid://qriwje082fmt" path="res://scene/thing/card_crystal.tscn" id="2_orl8t"]
 
 [node name="Card" type="Node2D"]
 script = ExtResource("1_xpy3r")
@@ -15,6 +16,29 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="CardCrystal1" parent="Crystal" instance=ExtResource("2_orl8t")]
+layout_mode = 1
+
+[node name="CardCrystal2" parent="Crystal" instance=ExtResource("2_orl8t")]
+layout_mode = 1
+offset_left = 40.0
+offset_right = 40.0
+
+[node name="CardCrystal3" parent="Crystal" instance=ExtResource("2_orl8t")]
+layout_mode = 1
+offset_left = 80.0
+offset_right = 80.0
+
+[node name="CardCrystal4" parent="Crystal" instance=ExtResource("2_orl8t")]
+layout_mode = 1
+offset_left = 120.0
+offset_right = 120.0
+
+[node name="CardCrystal5" parent="Crystal" instance=ExtResource("2_orl8t")]
+layout_mode = 1
+offset_left = 160.0
+offset_right = 160.0
 
 [node name="Border" type="ReferenceRect" parent="."]
 offset_right = 200.0

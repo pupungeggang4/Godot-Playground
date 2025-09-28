@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpgehq5d2dibd"]
+[gd_scene load_steps=8 format=3 uid="uid://cpgehq5d2dibd"]
 
 [ext_resource type="PackedScene" uid="uid://cnr2ptpnjparn" path="res://scene/ui_part/ui_menu.tscn" id="1_afp2b"]
 [ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_ffp3s"]
 [ext_resource type="Script" uid="uid://cb3g4hfel3e6u" path="res://script/scene/battle.gd" id="1_soyo5"]
 [ext_resource type="Script" uid="uid://dwdcrwpa8g4i5" path="res://script/thing/player.gd" id="2_0okv5"]
-[ext_resource type="Script" uid="uid://cly4f5wmmthpm" path="res://scene/enemy.gd" id="3_ebedk"]
+[ext_resource type="Script" uid="uid://cly4f5wmmthpm" path="res://script/thing/enemy.gd" id="3_ebedk"]
+[ext_resource type="Script" uid="uid://csdwbe364qns3" path="res://script/scene/battle_ui.gd" id="4_6qw66"]
+[ext_resource type="PackedScene" uid="uid://c0ocqfagdq6g7" path="res://scene/ui_part/window.tscn" id="5_q27o7"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_soyo5")
@@ -20,6 +22,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("4_6qw66")
 
 [node name="ButtonMenu" type="ColorRect" parent="UI"]
 layout_mode = 0
@@ -84,10 +87,8 @@ offset_top = 420.0
 offset_right = 1260.0
 offset_bottom = 700.0
 
-[node name="Window" type="Control" parent="UI"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Window" parent="UI" instance=ExtResource("5_q27o7")]
+layout_mode = 1
 
 [node name="UIMenu" parent="UI" instance=ExtResource("1_afp2b")]
 visible = false
