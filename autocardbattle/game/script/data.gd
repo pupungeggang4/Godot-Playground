@@ -57,7 +57,7 @@ const character_d = {
     4: 'Character : Earth\nGain armor.',
     5: 'Character : Light\nHeal units.',
     6: 'Character : Dark\nPlay powerful cards.',
-    7: 'Character : All\n Use all cards.'
+    7: 'Character : All\nUse all cards.'
 }
 
 const enemy = {
