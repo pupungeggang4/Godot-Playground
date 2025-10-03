@@ -11,3 +11,7 @@ func handle_mouse():
             GVar.state = ''
             GVar.menu = false
             GVar.selected_character = -1
+            
+        if Func.point_inside_rect_ui(mouse, UI.button_collection):
+            Func.change_scene(self, 'res://scene/collection.tscn', 'Collection')
+            GVar.collection_tab = 0

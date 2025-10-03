@@ -25,3 +25,5 @@ var player = {
     'equipment': [],
     'gold': 0,
 }
+
+var collection_tab = 0
