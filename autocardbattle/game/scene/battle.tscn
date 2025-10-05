@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpgehq5d2dibd"]
+[gd_scene load_steps=10 format=3 uid="uid://cpgehq5d2dibd"]
 
 [ext_resource type="PackedScene" uid="uid://cnr2ptpnjparn" path="res://scene/ui_part/ui_menu.tscn" id="1_afp2b"]
 [ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_ffp3s"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dwdcrwpa8g4i5" path="res://script/thing/player.gd" id="2_0okv5"]
 [ext_resource type="Script" uid="uid://cly4f5wmmthpm" path="res://script/thing/enemy.gd" id="3_ebedk"]
 [ext_resource type="Script" uid="uid://csdwbe364qns3" path="res://script/scene/battle_ui.gd" id="4_6qw66"]
+[ext_resource type="Texture2D" uid="uid://bt105k6akqy8d" path="res://image/buttonplay.png" id="5_ougy3"]
 [ext_resource type="PackedScene" uid="uid://c0ocqfagdq6g7" path="res://scene/ui_part/window.tscn" id="5_q27o7"]
+[ext_resource type="Texture2D" uid="uid://blyb20kx6xiwk" path="res://image/buttonpause.png" id="6_bdn7b"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_soyo5")
@@ -37,6 +39,22 @@ offset_left = 560.0
 offset_top = 280.0
 offset_right = 720.0
 offset_bottom = 360.0
+
+[node name="ButtonPlay" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 100.0
+texture = ExtResource("5_ougy3")
+
+[node name="ButtonPause" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 20.0
+offset_right = 720.0
+offset_bottom = 100.0
+texture = ExtResource("6_bdn7b")
 
 [node name="TextProceed" type="Label" parent="UI"]
 layout_mode = 0
@@ -88,6 +106,7 @@ offset_right = 1260.0
 offset_bottom = 700.0
 
 [node name="Window" parent="UI" instance=ExtResource("5_q27o7")]
+visible = false
 layout_mode = 1
 
 [node name="UIMenu" parent="UI" instance=ExtResource("1_afp2b")]

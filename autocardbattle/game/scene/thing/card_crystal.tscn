@@ -10,16 +10,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Crystal" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextNum" type="Label" parent="."]
 layout_mode = 0
-offset_left = 4.0
+offset_left = 44.0
 offset_top = 4.0
-offset_right = 44.0
+offset_right = 84.0
 offset_bottom = 36.0
 theme = ExtResource("1_qasij")
 theme_override_colors/font_color = Color(0, 0, 0, 1)

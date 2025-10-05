@@ -30,16 +30,6 @@ layout_mode = 1
 offset_left = 80.0
 offset_right = 80.0
 
-[node name="CardCrystal4" parent="Crystal" instance=ExtResource("2_orl8t")]
-layout_mode = 1
-offset_left = 120.0
-offset_right = 120.0
-
-[node name="CardCrystal5" parent="Crystal" instance=ExtResource("2_orl8t")]
-layout_mode = 1
-offset_left = 160.0
-offset_right = 160.0
-
 [node name="Border" type="ReferenceRect" parent="."]
 offset_right = 200.0
 offset_bottom = 280.0

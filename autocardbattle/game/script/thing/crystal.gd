@@ -17,6 +17,7 @@ func set_data(ID):
     element = data.element
     effect = data.effect
     description = data_d
+    get_node('Crystal').texture = Res.img.crystal[self.ID]
     
 func clone_from_crystal(crystal):
     self.ID = crystal.ID
@@ -24,6 +25,7 @@ func clone_from_crystal(crystal):
     self.element = crystal.element
     self.effect = crystal.effect.duplicate(true)
     self.description = crystal.description
+    get_node('Crystal').texture = Res.img.crystal[self.ID]
 
 func _process(delta):
     pass

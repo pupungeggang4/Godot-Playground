@@ -5,6 +5,6 @@
 [node name="Crystal" type="Node2D"]
 script = ExtResource("1_o7r8h")
 
-[node name="Backgorund" type="ColorRect" parent="."]
+[node name="Crystal" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0

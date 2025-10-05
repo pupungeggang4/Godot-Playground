@@ -30,26 +30,11 @@ func set_data(ID):
     apply_data_to_node()
     
 func apply_data_to_node():
-    for i in range(5):
+    for i in range(3):
         var card_crystal = get_node('Crystal/CardCrystal' + str(i + 1))
         if i < len(crystal):
             card_crystal.get_node('TextNum').text = str(crystal[i][1])
-            var color
-            if crystal[i][0] == 'any':
-                color = Color(0.8, 0.8, 0.8)
-            elif crystal[i][0] == 'fire':
-                color = Color(1.0, 0.5, 0.5)
-            elif crystal[i][0] == 'water':
-                color = Color(0.5, 0.5, 1.0)
-            elif crystal[i][0] == 'wind':
-                color = Color(0.5, 1.0, 0.5)
-            elif crystal[i][0] == 'earth':
-                color = Color(0.75, 0.75, 0.0)
-            elif crystal[i][0] == 'light':
-                color = Color(1.0, 1.0, 0.0)
-            elif crystal[i][0] == 'dark':
-                color = Color(0.75, 0.0, 0.75)
-            card_crystal.get_node('Background').color = color
+            card_crystal.get_node('Crystal').texture = Res.img.crystal[crystal[i][0]]
             card_crystal.position = Vector2(40 * i, 0)
             card_crystal.show()
         else:

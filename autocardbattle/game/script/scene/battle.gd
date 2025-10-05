@@ -4,6 +4,10 @@ extends Node2D
 @onready var enemy = get_node('Enemy')
 var turn_num = 0
 var turn_who = 0
+var turn_phase = 'start'
+var turn_process_time = 0.5
+var paused = false
+
 var unit_list = [
     null, null, null, null, null, null, null, null, null, null
 ]
@@ -48,6 +52,13 @@ func handle_mouse():
                 get_node('UI/UIMenu').hide()
                 Func.change_scene(self, 'res://scene/title.tscn', 'Title')
                 
+func handle_unit():
+    for i in range(10):
+        if unit_list[i] != null:
+            unit_list[i].show()
+            unit_list[i].position = Vector2(UI.unit[i][0], UI.unit[i][1])
+            unit_list[i].apply_data_to_node()
+                
 func battle_start():
     var node_field = get_node('/root/Battle/UI/Field')
     player.battle_start()
@@ -60,10 +71,3 @@ func battle_start():
     node_field.add_child(unit_player)
     unit_list[5] = unit_enemy
     node_field.add_child(unit_enemy)
-    
-func handle_unit():
-    for i in range(10):
-        if unit_list[i] != null:
-            unit_list[i].show()
-            unit_list[i].position = Vector2(UI.unit[i][0], UI.unit[i][1])
-            unit_list[i].apply_data_to_node()

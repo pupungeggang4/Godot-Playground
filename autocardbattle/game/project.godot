@@ -23,6 +23,8 @@ Save="*res://script/save.gd"
 UI="*res://script/ui.gd"
 Data="*res://script/data.gd"
 GFunc="*res://script/g_func.gd"
+Res="*res://script/res.gd"
+BattleHandler="*res://script/thing/battle_handler.gd"
 
 [display]
 

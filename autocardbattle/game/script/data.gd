@@ -1,9 +1,9 @@
 extends Node
 
 const card = {
-    1: {'ID': 1, 'name': 'plain 1', 'type': 'unit', 'element': 'normal', 'crystal': [['any', 1]], 'stat': [1, 2]},
-    2: {'ID': 1, 'name': 'plain 2', 'type': 'unit', 'element': 'normal', 'crystal': [['any', 2]], 'stat': [2, 3]},
-    3: {'ID': 1, 'name': 'plain 3', 'type': 'unit', 'element': 'normal', 'crystal': [['any', 3]], 'stat': [3, 4]}
+    1: {'ID': 1, 'name': 'plain 1', 'type': 'unit', 'element': 1, 'crystal': [[1, 1]], 'stat': [1, 2]},
+    2: {'ID': 1, 'name': 'plain 2', 'type': 'unit', 'element': 1, 'crystal': [[1, 2]], 'stat': [2, 3]},
+    3: {'ID': 1, 'name': 'plain 3', 'type': 'unit', 'element': 1, 'crystal': [[1, 3]], 'stat': [3, 4]}
 }
 
 const card_e = {
@@ -19,14 +19,14 @@ const card_d = {
 }
 
 const crystal = {
-    1: {'ID': 1, 'name': 'normal crystal', 'element': 'normal', 'effect': []},
-    2: {'ID': 2, 'name': 'fire crystal', 'element': 'fire', 'effect': []},
-    3: {'ID': 3, 'name': 'water crystal', 'element': 'water', 'effect': []},
-    4: {'ID': 4, 'name': 'wind crystal', 'element': 'wind', 'effect': []},
-    5: {'ID': 5, 'name': 'earth crystal', 'element': 'earth', 'effect': []},
-    6: {'ID': 6, 'name': 'light crystal', 'element': 'light', 'effect': []},
-    7: {'ID': 7, 'name': 'dark crystal', 'element': 'dark', 'effect': []},
-    8: {'ID': 8, 'name': 'rainbow crystal', 'element': 'all', 'effect': []},
+    1: {'ID': 1, 'name': 'normal crystal', 'element': 1, 'effect': []},
+    2: {'ID': 2, 'name': 'fire crystal', 'element': 2, 'effect': []},
+    3: {'ID': 3, 'name': 'water crystal', 'element': 3, 'effect': []},
+    4: {'ID': 4, 'name': 'wind crystal', 'element': 4, 'effect': []},
+    5: {'ID': 5, 'name': 'earth crystal', 'element': 5, 'effect': []},
+    6: {'ID': 6, 'name': 'light crystal', 'element': 6, 'effect': []},
+    7: {'ID': 7, 'name': 'dark crystal', 'element': 7, 'effect': []},
+    8: {'ID': 8, 'name': 'rainbow crystal', 'element': 8, 'effect': []},
 }
 
 const crystal_d = {
