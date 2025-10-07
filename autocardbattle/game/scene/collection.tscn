@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://km5j6mo8j1g5"]
+
+[ext_resource type="Script" uid="uid://bb4rfo00bi5j0" path="res://script/scene/collection.gd" id="1_vdy28"]
+[ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="2_3rd2l"]
+
+[node name="Collection" type="Node2D"]
+script = ExtResource("1_vdy28")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBack" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 280.0
+offset_bottom = 56.0
+theme = ExtResource("2_3rd2l")
+text = "Collection"

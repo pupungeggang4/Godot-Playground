@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3tlt11o52i03"]
+
+[ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_3vlox"]
+[ext_resource type="Script" uid="uid://1nrtoh7k1h2d" path="res://script/thing/unit.gd" id="1_np0tp"]
+
+[node name="Unit" type="Node2D"]
+visible = false
+script = ExtResource("1_np0tp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="TextAttack" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 124.0
+offset_right = 260.0
+offset_bottom = 156.0
+theme = ExtResource("1_3vlox")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="TextHP" type="Label" parent="."]
+offset_left = 124.0
+offset_top = 124.0
+offset_right = 380.0
+offset_bottom = 156.0
+theme = ExtResource("1_3vlox")
+theme_override_colors/font_color = Color(0, 0, 0, 1)

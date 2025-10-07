@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpa5qv3gsmr6r"]
+
+[ext_resource type="Script" uid="uid://by2qwyfp0332u" path="res://script/scene/character_select.gd" id="1_iht2v"]
+[ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_mneoq"]
+
+[node name="CharacterSelect" type="Node2D"]
+script = ExtResource("1_iht2v")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonBack" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 280.0
+offset_bottom = 56.0
+theme = ExtResource("1_mneoq")
+text = "Select Character"
+
+[node name="ButtonCharacter1" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 140.0
+offset_right = 180.0
+offset_bottom = 300.0
+
+[node name="ButtonCharacter2" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 140.0
+offset_right = 380.0
+offset_bottom = 300.0
+
+[node name="ButtonCharacter3" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 140.0
+offset_right = 580.0
+offset_bottom = 300.0
+
+[node name="ButtonCharacter4" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 340.0
+offset_right = 180.0
+offset_bottom = 500.0
+
+[node name="ButtonCharacter5" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 340.0
+offset_right = 380.0
+offset_bottom = 500.0
+
+[node name="ButtonCharacter6" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 340.0
+offset_right = 580.0
+offset_bottom = 500.0
+
+[node name="ButtonCharacter7" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 540.0
+offset_right = 180.0
+offset_bottom = 700.0
+
+[node name="DescriptionBox" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 140.0
+offset_right = 1260.0
+offset_bottom = 500.0
+
+[node name="Description" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 144.0
+offset_right = 1256.0
+offset_bottom = 496.0
+theme = ExtResource("1_mneoq")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+
+[node name="ButtonSelected" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 140.0
+offset_right = 180.0
+offset_bottom = 300.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonStart" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 620.0
+offset_right = 1260.0
+offset_bottom = 700.0
+
+[node name="TextStart" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 1124.0
+offset_top = 644.0
+offset_right = 1380.0
+offset_bottom = 676.0
+theme = ExtResource("1_mneoq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Start"

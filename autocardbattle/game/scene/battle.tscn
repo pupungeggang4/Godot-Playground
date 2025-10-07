@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpgehq5d2dibd"]
+
+[ext_resource type="PackedScene" uid="uid://cnr2ptpnjparn" path="res://scene/ui_part/ui_menu.tscn" id="1_afp2b"]
+[ext_resource type="Theme" uid="uid://dhmegweq74tsn" path="res://res/font_neodgm.tres" id="1_ffp3s"]
+[ext_resource type="Script" uid="uid://cb3g4hfel3e6u" path="res://script/scene/battle.gd" id="1_soyo5"]
+[ext_resource type="Script" uid="uid://dwdcrwpa8g4i5" path="res://script/thing/player.gd" id="2_0okv5"]
+[ext_resource type="Script" uid="uid://cly4f5wmmthpm" path="res://script/thing/enemy.gd" id="3_ebedk"]
+[ext_resource type="Script" uid="uid://csdwbe364qns3" path="res://script/scene/battle_ui.gd" id="4_6qw66"]
+[ext_resource type="Texture2D" uid="uid://bt105k6akqy8d" path="res://image/buttonplay.png" id="5_ougy3"]
+[ext_resource type="PackedScene" uid="uid://c0ocqfagdq6g7" path="res://scene/ui_part/window.tscn" id="5_q27o7"]
+[ext_resource type="Texture2D" uid="uid://blyb20kx6xiwk" path="res://image/buttonpause.png" id="6_bdn7b"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_soyo5")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_0okv5")
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource("3_ebedk")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_6qw66")
+
+[node name="ButtonMenu" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="ButtonProceed" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 280.0
+offset_right = 720.0
+offset_bottom = 360.0
+
+[node name="ButtonPlay" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 100.0
+texture = ExtResource("5_ougy3")
+
+[node name="ButtonPause" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 20.0
+offset_right = 720.0
+offset_bottom = 100.0
+texture = ExtResource("6_bdn7b")
+
+[node name="TextProceed" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 304.0
+offset_right = 840.0
+offset_bottom = 336.0
+theme = ExtResource("1_ffp3s")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Proceed"
+
+[node name="Field" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardPlayer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardEnemy" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CrystalPlayer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="UI/CrystalPlayer"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 420.0
+offset_right = 180.0
+offset_bottom = 700.0
+
+[node name="CrystalEnemy" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="UI/CrystalEnemy"]
+layout_mode = 0
+offset_left = 1100.0
+offset_top = 420.0
+offset_right = 1260.0
+offset_bottom = 700.0
+
+[node name="Window" parent="UI" instance=ExtResource("5_q27o7")]
+visible = false
+layout_mode = 1
+
+[node name="UIMenu" parent="UI" instance=ExtResource("1_afp2b")]
+visible = false
+layout_mode = 1

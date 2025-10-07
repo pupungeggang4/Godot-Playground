@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5lhfsj4rqnrt"]
+
+[ext_resource type="Theme" uid="uid://x2oy21wgpm74" path="res://res/neodgm.tres" id="1_dydcp"]
+
+[node name="FieldMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Rect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 240.0
+
+[node name="Rect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 640.0
+offset_bottom = 160.0
+color = Color(1, 1, 0, 1)
+
+[node name="TextPaused" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 248.0
+offset_bottom = 56.0
+theme = ExtResource("1_dydcp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Paused"
+
+[node name="TextResume" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 248.0
+offset_bottom = 136.0
+theme = ExtResource("1_dydcp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Resume"
+
+[node name="TextExit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 184.0
+offset_right = 248.0
+offset_bottom = 216.0
+theme = ExtResource("1_dydcp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Exit"

@@ -1,5 +1,46 @@
-[gd_scene format=3 uid="uid://baee7o6ky8qd6"]
+[gd_scene load_steps=9 format=3 uid="uid://baee7o6ky8qd6"]
+
+[ext_resource type="PackedScene" uid="uid://c2xq2gime7e3e" path="res://scene/thing/player.tscn" id="1_5kiuu"]
+[ext_resource type="Script" uid="uid://cxei8moqo3tly" path="res://script/scene/game.gd" id="1_33cqm"]
+[ext_resource type="Script" uid="uid://cvkiv1j7jj64q" path="res://script/thing/player.gd" id="2_dbls1"]
+[ext_resource type="Script" uid="uid://dymcxg26n21m4" path="res://script/thing/camera.gd" id="2_qpk70"]
+[ext_resource type="PackedScene" uid="uid://c4ylj3abbkpli" path="res://scene/thing/wall.tscn" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://ddnuuy44f8b36" path="res://scene/ui_part/ui_game.tscn" id="5_p1ry8"]
+[ext_resource type="PackedScene" uid="uid://po714iljpfua" path="res://scene/ui_part/ui_menu.tscn" id="6_xlg7c"]
+[ext_resource type="PackedScene" uid="uid://byfxtq2hg0fci" path="res://scene/thing/coin.tscn" id="9_17rxn"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_33cqm")
+
+[node name="Player" parent="." instance=ExtResource("1_5kiuu")]
+script = ExtResource("2_dbls1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_qpk70")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMapLayer" parent="Level"]
+
+[node name="Thing" type="Node2D" parent="Level"]
+
+[node name="Coin" parent="Level/Thing" instance=ExtResource("9_17rxn")]
+position = Vector2(104, 41)
+
+[node name="Coin2" parent="Level/Thing" instance=ExtResource("9_17rxn")]
+position = Vector2(270, -114)
+
+[node name="Coin3" parent="Level/Thing" instance=ExtResource("9_17rxn")]
+position = Vector2(168, 178)
+
+[node name="Coin4" parent="Level/Thing" instance=ExtResource("9_17rxn")]
+position = Vector2(340, 96)
+
+[node name="Wall" parent="Level/Thing" instance=ExtResource("4_xwcet")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UIGame" parent="UI" instance=ExtResource("5_p1ry8")]
+
+[node name="UIMenu" parent="UI" instance=ExtResource("6_xlg7c")]
+visible = false
