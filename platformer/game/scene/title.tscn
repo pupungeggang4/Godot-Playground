@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://bl14o1ln2ihbk"]
+[gd_scene load_steps=4 format=3 uid="uid://bl14o1ln2ihbk"]
+
+[ext_resource type="Script" uid="uid://b43bkjxyn2wcg" path="res://script/scene/title.gd" id="1_4fdtc"]
+[ext_resource type="Texture2D" uid="uid://4jpsaagn5vd" path="res://image/arrow.png" id="2_hr6ky"]
+[ext_resource type="Script" uid="uid://2j8byhy4pj5t" path="res://script/scene/arrow.gd" id="3_0npwg"]
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_4fdtc")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 1120.0
+offset_bottom = 400.0
+
+[node name="TextTitle" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 17.0
+offset_right = 198.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 32
+text = "Platformer"
+
+[node name="TextStart" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 177.0
+offset_right = 358.0
+offset_bottom = 222.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+
+[node name="TextErase" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 257.0
+offset_right = 358.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Erase Data"
+
+[node name="TextExit" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 337.0
+offset_right = 358.0
+offset_bottom = 382.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+
+[node name="Arrow" type="TextureRect" parent="."]
+offset_left = 40.0
+offset_top = 160.0
+offset_right = 120.0
+offset_bottom = 240.0
+texture = ExtResource("2_hr6ky")
+script = ExtResource("3_0npwg")

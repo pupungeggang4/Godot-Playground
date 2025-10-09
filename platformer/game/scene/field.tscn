@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk32mlhxfaypb"]
+
+[ext_resource type="Script" uid="uid://cwm23k8r6ep2e" path="res://script/scene/field.gd" id="1_evxyq"]
+[ext_resource type="PackedScene" uid="uid://bacg7ob2u2h4g" path="res://scene/thing/player.tscn" id="1_odcg7"]
+[ext_resource type="PackedScene" uid="uid://yp467nqftmlm" path="res://scene/ui_part/menu.tscn" id="3_galdp"]
+
+[node name="Field" type="Node2D"]
+script = ExtResource("1_evxyq")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Player" parent="Level" instance=ExtResource("1_odcg7")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Menu" parent="UI" instance=ExtResource("3_galdp")]
+visible = false
+layout_mode = 0
