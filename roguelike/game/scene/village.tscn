@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://bb341no8fq17j"]
+[gd_scene load_steps=6 format=3 uid="uid://bb341no8fq17j"]
+
+[ext_resource type="Script" uid="uid://btevgqjmuu76q" path="res://script/scene/village.gd" id="1_7v50w"]
+[ext_resource type="PackedScene" uid="uid://b2nj34ek62mhq" path="res://scene/thing/village_player.tscn" id="2_rnkr7"]
+[ext_resource type="PackedScene" uid="uid://bbkwh4flwl47u" path="res://scene/ui_part/menu_village.tscn" id="2_te3ba"]
+[ext_resource type="Texture2D" uid="uid://cgytu0hprp455" path="res://image/portal.png" id="4_046lf"]
+[ext_resource type="Texture2D" uid="uid://des1e35bfwf62" path="res://image/fieldinteract.png" id="5_ho8me"]
 
 [node name="Village" type="Node2D"]
+script = ExtResource("1_7v50w")
+
+[node name="Portal" type="Sprite2D" parent="."]
+position = Vector2(0, -320)
+texture = ExtResource("4_046lf")
+
+[node name="FieldPortal" type="Sprite2D" parent="."]
+position = Vector2(0, -200)
+texture = ExtResource("5_ho8me")
+
+[node name="FieldShop" type="Sprite2D" parent="."]
+position = Vector2(320, 0)
+texture = ExtResource("5_ho8me")
+
+[node name="FieldProgress" type="Sprite2D" parent="."]
+position = Vector2(-320, 0)
+texture = ExtResource("5_ho8me")
+
+[node name="VillagePlayer" parent="." instance=ExtResource("2_rnkr7")]
+
+[node name="Camera2D" type="Camera2D" parent="VillagePlayer"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MenuVillage" parent="UI" instance=ExtResource("2_te3ba")]
+visible = false
