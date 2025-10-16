@@ -16,16 +16,16 @@ script = ExtResource("1_ylbfw")
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 320.0
-offset_top = 240.0
+offset_top = 200.0
 offset_right = 960.0
-offset_bottom = 480.0
+offset_bottom = 520.0
 
 [node name="TextPaused" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
-offset_top = 257.0
+offset_top = 217.0
 offset_right = 594.0
-offset_bottom = 302.0
+offset_bottom = 262.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Paused"
@@ -33,9 +33,9 @@ text = "Paused"
 [node name="TextResume" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
-offset_top = 337.0
+offset_top = 297.0
 offset_right = 594.0
-offset_bottom = 382.0
+offset_bottom = 342.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Resume"
@@ -43,15 +43,25 @@ text = "Resume"
 [node name="TextExit" type="Label" parent="."]
 layout_mode = 0
 offset_left = 344.0
-offset_top = 417.0
+offset_top = 377.0
 offset_right = 594.0
-offset_bottom = 462.0
+offset_bottom = 422.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Exit"
+text = "Exit to title"
+
+[node name="TextQuit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 457.0
+offset_right = 594.0
+offset_bottom = 502.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Quit"
 
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(240, 320)
+position = Vector2(240, 280)
 texture = ExtResource("2_gd7jg")
 centered = false
 script = ExtResource("3_w3u8o")

@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var node_village = get_node('/root/Village')
 @onready var node_field_portal = get_node('/root/Village/FieldPortal')
 @onready var node_field_shop = get_node('/root/Village/FieldShop')
 @onready var node_field_progress = get_node('/root/Village/FieldProgress')
@@ -11,8 +10,8 @@ func _ready():
     pass
     
 func _process(delta):
-    if node_village.menu == false:
-        if node_village.state == '':
+    if GVar.menu == false:
+        if GVar.state == '':
             move_player(delta)
             field_interact()
             
@@ -43,4 +42,5 @@ func move_player(delta):
 func field_interact():
     if Input.is_action_just_pressed('attack'):
         if (node_field_portal.position - position).length() < 80:
-            get_tree().change_scene_to_file('res://scene/battle.tscn')
+            GVar.state = 'adventure_confirm'
+            GVar.selected_adventure_confirm = 0

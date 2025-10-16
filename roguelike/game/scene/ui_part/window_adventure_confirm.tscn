@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhf71cl53ed8g"]
+
+[ext_resource type="Script" uid="uid://ck1njiw7horb3" path="res://script/ui_part/window_adventure_confirm.gd" id="1_t0b7s"]
+[ext_resource type="Texture2D" uid="uid://b8tc344ldgexy" path="res://image/arrow.png" id="1_vu80y"]
+[ext_resource type="Script" uid="uid://svgqqgkek6ea" path="res://script/ui_part/arrow_menu_adventure_confirm.gd" id="2_xerqh"]
+
+[node name="WindowAdventureConfirm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0b7s")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 240.0
+offset_right = 960.0
+offset_bottom = 480.0
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 360.0
+offset_right = 440.0
+offset_bottom = 440.0
+texture = ExtResource("1_vu80y")
+script = ExtResource("2_xerqh")
+
+[node name="TextStart" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 257.0
+offset_right = 604.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Start Adventure?"
+
+[node name="TextYes" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 377.0
+offset_right = 537.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Yes"
+
+[node name="TextNo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 377.0
+offset_right = 848.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "No"
