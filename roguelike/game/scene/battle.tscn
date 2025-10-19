@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cegvx2ojm6lfq"]
+[gd_scene load_steps=6 format=3 uid="uid://cegvx2ojm6lfq"]
 
 [ext_resource type="Script" uid="uid://d3pqpth07p1pi" path="res://script/scene/battle.gd" id="1_afp2b"]
 [ext_resource type="PackedScene" uid="uid://cb0ngd50upr35" path="res://scene/ui_part/menu_battle.tscn" id="2_ffp3s"]
 [ext_resource type="PackedScene" uid="uid://4e2hxf6qfxcy" path="res://scene/thing/player.tscn" id="2_soyo5"]
 [ext_resource type="PackedScene" uid="uid://bu6s7rafn3r2t" path="res://scene/ui_part/window_result.tscn" id="3_0okv5"]
+[ext_resource type="PackedScene" uid="uid://1bmryvva7x7c" path="res://scene/ui_part/window_reward.tscn" id="3_ebedk"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_afp2b")
@@ -13,6 +14,9 @@ script = ExtResource("1_afp2b")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="WindowReward" parent="UI" instance=ExtResource("3_ebedk")]
+visible = false
 
 [node name="WindowResult" parent="UI" instance=ExtResource("3_0okv5")]
 visible = false

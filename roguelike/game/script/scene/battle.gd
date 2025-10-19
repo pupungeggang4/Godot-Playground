@@ -1,12 +1,13 @@
 extends Node2D
 
 func _ready():
-    GVar.state = 'pick_weapon'
+    GVar.state = 'start'
     GVar.menu = false
     GVar.selected_reward = -1
     
 func _process(delta):
     handle_key()
+    print(GVar.state)
     
 func handle_key():
     if GVar.menu == false:
@@ -15,11 +16,12 @@ func handle_key():
             GVar.selected_menu_battle = 0
         if GVar.state == '':
             pass
-        elif GVar.state == 'pick_weapon':
-            handle_pick_weapon()
+        elif GVar.state == 'start':
+            handle_start()
         elif GVar.state == 'result':
             if Input.is_action_just_pressed('confirm'):
                 get_tree().change_scene_to_file('res://scene/village.tscn')
+                
     elif GVar.menu == true:
         if Input.is_action_just_pressed('back'):
             GVar.menu = false
@@ -36,5 +38,6 @@ func handle_key():
             elif GVar.selected_menu_battle == 2:
                 get_tree().quit()
                 
-func handle_pick_weapon():
-    pass
+func handle_start():
+    if Input.is_action_just_pressed('confirm'):
+        GVar.state = ''

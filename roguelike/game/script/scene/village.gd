@@ -21,6 +21,7 @@ func handle_key():
                 if GVar.selected_adventure_confirm == 0:
                     get_tree().change_scene_to_file('res://scene/battle.tscn')
                     GVar.adventure.start_adventure()
+                    GVar.state = 'start'
                 else:
                     GVar.state = ''
             

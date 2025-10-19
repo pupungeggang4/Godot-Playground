@@ -37,3 +37,11 @@ visible = false
 
 [node name="MenuVillage" parent="UI" instance=ExtResource("2_te3ba")]
 visible = false
+
+[node name="TextControl" type="Label" parent="UI"]
+offset_left = 24.0
+offset_top = 657.0
+offset_right = 995.0
+offset_bottom = 702.0
+theme_override_font_sizes/font_size = 32
+text = "[WASD] Move [Z] Dash [X] Interact"

@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://1bmryvva7x7c"]
+[gd_scene load_steps=4 format=3 uid="uid://1bmryvva7x7c"]
+
+[ext_resource type="Script" uid="uid://b8c3vo4nxcrrw" path="res://script/ui_part/window_reward.gd" id="1_pd685"]
+[ext_resource type="Texture2D" uid="uid://b8tc344ldgexy" path="res://image/arrow.png" id="1_royqa"]
+[ext_resource type="Script" uid="uid://n0wigb4uyp17" path="res://script/ui_part/arrow_window_reward.gd" id="3_610f7"]
 
 [node name="WindowReward" type="Control"]
 layout_mode = 3
@@ -7,3 +11,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pd685")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 1120.0
+offset_bottom = 680.0
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 308.0
+offset_right = 311.0
+offset_bottom = 388.0
+texture = ExtResource("1_royqa")
+script = ExtResource("3_610f7")
