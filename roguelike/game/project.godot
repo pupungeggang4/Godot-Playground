@@ -22,6 +22,7 @@ Func="*res://script/func.gd"
 GFunc="*res://script/g_func.gd"
 GVar="*res://script/g_var.gd"
 Save="*res://script/save.gd"
+GImage="*res://script/image.gd"
 
 [display]
 

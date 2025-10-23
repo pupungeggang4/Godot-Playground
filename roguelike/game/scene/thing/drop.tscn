@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjf3ea0vwfgql"]
+
+[ext_resource type="Script" uid="uid://by5bjsjtm6ss7" path="res://script/thing/drop.gd" id="1_nsgup"]
+[ext_resource type="Texture2D" uid="uid://dt5xhs7eah0x7" path="res://image/coin.png" id="2_t5yft"]
+
+[node name="Drop" type="Node2D"]
+script = ExtResource("1_nsgup")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_t5yft")

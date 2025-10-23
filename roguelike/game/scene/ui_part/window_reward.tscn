@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1bmryvva7x7c"]
 
 [ext_resource type="Script" uid="uid://b8c3vo4nxcrrw" path="res://script/ui_part/window_reward.gd" id="1_pd685"]
-[ext_resource type="Texture2D" uid="uid://b8tc344ldgexy" path="res://image/arrow.png" id="1_royqa"]
+[ext_resource type="Texture2D" uid="uid://bf47od1kmdo33" path="res://image/arrowdown.png" id="2_610f7"]
 [ext_resource type="Script" uid="uid://n0wigb4uyp17" path="res://script/ui_part/arrow_window_reward.gd" id="3_610f7"]
 
 [node name="WindowReward" type="Control"]
@@ -20,11 +20,45 @@ offset_top = 40.0
 offset_right = 1120.0
 offset_bottom = 680.0
 
+[node name="TextTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 64.0
+offset_right = 224.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Select"
+
 [node name="Arrow" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 308.0
-offset_right = 311.0
-offset_bottom = 388.0
-texture = ExtResource("1_royqa")
+offset_left = 600.0
+offset_top = 120.0
+offset_right = 680.0
+offset_bottom = 200.0
+texture = ExtResource("2_610f7")
 script = ExtResource("3_610f7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 240.0
+offset_right = 720.0
+offset_bottom = 400.0
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 240.0
+offset_right = 400.0
+offset_bottom = 400.0
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 240.0
+offset_right = 1040.0
+offset_bottom = 400.0
+color = Color(1, 1, 0, 1)

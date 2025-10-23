@@ -1,43 +1,19 @@
 extends Node2D
 
+@onready var node_drop = get_node('/root/Battle/Drop')
+
+var unit = []
+var drop = []
+var proj = []
+
 func _ready():
-    GVar.state = 'start'
-    GVar.menu = false
-    GVar.selected_reward = -1
-    
-func _process(delta):
-    handle_key()
-    print(GVar.state)
-    
-func handle_key():
-    if GVar.menu == false:
-        if Input.is_action_just_pressed('back'):
-            GVar.menu = true
-            GVar.selected_menu_battle = 0
-        if GVar.state == '':
-            pass
-        elif GVar.state == 'start':
-            handle_start()
-        elif GVar.state == 'result':
-            if Input.is_action_just_pressed('confirm'):
-                get_tree().change_scene_to_file('res://scene/village.tscn')
-                
-    elif GVar.menu == true:
-        if Input.is_action_just_pressed('back'):
-            GVar.menu = false
-        if Input.is_action_just_pressed('up'):
-            GVar.selected_menu_battle = (GVar.selected_menu_battle + 2) % 3
-        if Input.is_action_just_pressed('down'):
-            GVar.selected_menu_battle = (GVar.selected_menu_battle + 1) % 3
-        if Input.is_action_just_pressed('confirm'):
-            if GVar.selected_menu_battle == 0:
-                GVar.menu = false
-            elif GVar.selected_menu_battle == 1:
-                GVar.menu = false
-                GVar.state = 'result'
-            elif GVar.selected_menu_battle == 2:
-                get_tree().quit()
-                
-func handle_start():
-    if Input.is_action_just_pressed('confirm'):
-        GVar.state = ''
+    spawn_drop('coin', 10, Vector2(80, 80))
+    spawn_drop('exporb', 10, Vector2(-80, -80))
+
+func spawn_drop(type, value, pos):
+    var node = load('res://scene/thing/drop.tscn').instantiate()
+    node.position = pos
+    node.set_data(type, value)
+    unit.append(node)
+    print(self)
+    node_drop.add_child(node)

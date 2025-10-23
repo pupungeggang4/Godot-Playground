@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var node_field_portal = get_node('/root/Village/FieldPortal')
-@onready var node_field_shop = get_node('/root/Village/FieldShop')
-@onready var node_field_progress = get_node('/root/Village/FieldProgress')
+@onready var node_field_portal = get_node('/root/Village/VillageEntity/FieldPortal')
+@onready var node_field_shop = get_node('/root/Village/VillageEntity/FieldShop')
+@onready var node_field_progress = get_node('/root/Village/VillageEntity/FieldProgress')
 
 var speed = 320.0
 
