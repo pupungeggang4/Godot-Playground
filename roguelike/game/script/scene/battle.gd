@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var node_drop = get_node('/root/Battle/Drop')
+@onready var node_player = get_node('/root/Battle/Player')
 
 var unit = []
 var drop = []

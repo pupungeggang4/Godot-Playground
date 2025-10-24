@@ -1,6 +1,7 @@
 extends Node
 
 @onready var battle = get_node('/root/Battle')
+@onready var player = get_node('/root/Battle/Player')
 
 func _ready():
     GVar.state = 'start'
@@ -46,3 +47,4 @@ func handle_start():
         GVar.selected_adventure_start = (GVar.selected_adventure_start + 1) % 3
     if Input.is_action_just_pressed('confirm'):
         GVar.state = ''
+        player.start_adventure()
