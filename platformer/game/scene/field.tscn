@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dk32mlhxfaypb"]
+[gd_scene load_steps=8 format=4 uid="uid://dk32mlhxfaypb"]
 
 [ext_resource type="Script" uid="uid://cwm23k8r6ep2e" path="res://script/scene/field.gd" id="1_evxyq"]
 [ext_resource type="PackedScene" uid="uid://bacg7ob2u2h4g" path="res://scene/thing/player.tscn" id="1_odcg7"]
-[ext_resource type="Script" uid="uid://gnokyumiq13x" path="res://script/thing/camera.gd" id="2_3mvvo"]
 [ext_resource type="Script" uid="uid://cdem05js2ni5y" path="res://script/thing/level.gd" id="3_ckb0a"]
 [ext_resource type="PackedScene" uid="uid://yp467nqftmlm" path="res://scene/ui_part/menu.tscn" id="3_galdp"]
 [ext_resource type="TileSet" uid="uid://gma4egdw0e5t" path="res://res/tile_set_plain.tres" id="6_0d0g4"]
@@ -11,9 +10,6 @@
 
 [node name="Field" type="Node2D"]
 script = ExtResource("1_evxyq")
-
-[node name="Camera" type="Camera2D" parent="."]
-script = ExtResource("2_3mvvo")
 
 [node name="Level" type="Node2D" parent="."]
 script = ExtResource("3_ckb0a")
