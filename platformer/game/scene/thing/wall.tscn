@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvdeidt7tr7it"]
+
+[ext_resource type="Script" uid="uid://bsnsis2k1i0f6" path="res://script/thing/wall.gd" id="1_aeqlu"]
+[ext_resource type="Texture2D" uid="uid://c38ej7ejr0gsi" path="res://image/thing/texturestone.png" id="1_ntr8o"]
+
+[node name="Wall" type="Node2D"]
+script = ExtResource("1_aeqlu")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_ntr8o")
+region_enabled = true
+region_filter_clip_enabled = true
