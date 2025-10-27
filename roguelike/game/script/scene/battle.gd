@@ -8,8 +8,13 @@ var unit = []
 var proj = []
 
 func _ready():
-    spawn_drop('coin', 10, Vector2(80, 80))
-    spawn_drop('exporb', 10, Vector2(-80, -80))
+    for i in range(10):
+        var x = randi_range(200, 400)
+        var y = randi_range(-100, 100)
+        spawn_drop('coin', 10, Vector2(x, y))
+        x = randi_range(200, 400)
+        y = randi_range(-100, 100)
+        spawn_drop('exporb', 10, Vector2(x, y))
     
 func _process(delta):
     pass

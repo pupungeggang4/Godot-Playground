@@ -17,6 +17,7 @@ func _process(delta):
             if player.exp_point >= player.exp_max:
                 player.exp_point -= player.exp_max
                 player.level += 1
+                player.exp_max = (player.level + 1) * 10
         queue_free()
 
 func set_data(type, amount):

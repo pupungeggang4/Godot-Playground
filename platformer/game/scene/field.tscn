@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=4 uid="uid://dk32mlhxfaypb"]
+[gd_scene load_steps=11 format=4 uid="uid://dk32mlhxfaypb"]
 
 [ext_resource type="Script" uid="uid://cwm23k8r6ep2e" path="res://script/scene/field.gd" id="1_evxyq"]
 [ext_resource type="PackedScene" uid="uid://bacg7ob2u2h4g" path="res://scene/thing/player.tscn" id="1_odcg7"]
 [ext_resource type="Script" uid="uid://cdem05js2ni5y" path="res://script/thing/level.gd" id="3_ckb0a"]
 [ext_resource type="PackedScene" uid="uid://yp467nqftmlm" path="res://scene/ui_part/menu.tscn" id="3_galdp"]
+[ext_resource type="PackedScene" uid="uid://bj3jp5whaxjjn" path="res://scene/thing/coin.tscn" id="5_0si61"]
 [ext_resource type="TileSet" uid="uid://gma4egdw0e5t" path="res://res/tile_set_plain.tres" id="6_0d0g4"]
 [ext_resource type="PackedScene" uid="uid://cj1tarfwjwr0n" path="res://scene/thing/enemy.tscn" id="6_ahwvv"]
 [ext_resource type="Texture2D" uid="uid://cfwoq17jx6w66" path="res://image/thing/platformsmall.png" id="7_0d0g4"]
 [ext_resource type="PackedScene" uid="uid://cvdeidt7tr7it" path="res://scene/thing/wall.tscn" id="7_0si61"]
+[ext_resource type="PackedScene" uid="uid://c1c0mc0knbpyi" path="res://scene/ui_part/ui_field.tscn" id="9_4lur4"]
 
 [node name="Field" type="Node2D"]
 script = ExtResource("1_evxyq")
@@ -22,6 +24,12 @@ script = ExtResource("3_ckb0a")
 [node name="Enemy" parent="Level/Entity" instance=ExtResource("6_ahwvv")]
 visible = false
 
+[node name="Coin" parent="Level/Entity" instance=ExtResource("5_0si61")]
+position = Vector2(111, -2)
+
+[node name="Coin2" parent="Level/Entity" instance=ExtResource("5_0si61")]
+position = Vector2(190, -3)
+
 [node name="Tile" type="TileMapLayer" parent="Level/Entity"]
 visible = false
 tile_map_data = PackedByteArray("AAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAADAAEAAAABAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAMAAAABAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAFAAMAAAABAAAAAAAEAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAABAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAP//AAAAAAAAAAANAP//AAAAAAAAAAANAAAAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAANAP7/AAABAAAAAAAOAP7/AAABAAAAAAA=")
@@ -35,6 +43,8 @@ texture = ExtResource("7_0d0g4")
 [node name="Wall" parent="Level/Entity" instance=ExtResource("7_0si61")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UIField" parent="UI" instance=ExtResource("9_4lur4")]
 
 [node name="Menu" parent="UI" instance=ExtResource("3_galdp")]
 visible = false

@@ -5,6 +5,8 @@ extends Node2D
 @export var gravity = 800.0
 @export var terminal_speed = 800.0
 
+var coin = 0
+
 func _ready():
     pass
     
