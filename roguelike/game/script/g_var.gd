@@ -2,6 +2,8 @@ extends Node
 
 var state = ''
 var menu = false
+var lang = 0
+var locale = Locale.data[Locale.lang_list[lang]]
 
 var selected_title = 0
 var selected_menu_village = 0

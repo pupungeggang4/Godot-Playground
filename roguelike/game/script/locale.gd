@@ -3,19 +3,19 @@ extends Node
 const lang_list = ['en', 'ko']
 const data = {
     'en': {
-        'game_name': 'Defense Game',
+        'game_name': 'Roguelike',
         'start_game': 'Start Game',
-        'tutorial': 'Tutorial',
-        'lang': 'English',
         'collection': 'Collection',
+        'lang': 'English',
+        'erase_data': 'Erase Data',
         'quit': 'Quit'
     },
     'ko': {
-        'game_name': '디펜스 게임',
+        'game_name': '로그라이크 게임',
         'start_game': '게임 시작',
-        'tutorial': '튜토리얼',
-        'lang': '한국어',
         'collection': '수집품',
+        'lang': '한국어',
+        'erase_data': '데이터 삭제',
         'quit': '끝내기'
     }
 }
