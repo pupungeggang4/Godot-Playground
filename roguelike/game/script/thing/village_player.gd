@@ -40,7 +40,7 @@ func move_player(delta):
     position += velocity * speed * delta
 
 func field_interact():
-    if Input.is_action_just_pressed('attack'):
+    if Input.is_action_just_pressed('interact'):
         if (node_field_portal.position - position).length() < 80:
             GVar.state = 'adventure_confirm'
             GVar.selected_adventure_confirm = 0
