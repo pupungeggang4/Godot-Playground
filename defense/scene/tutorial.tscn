@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://gl615emct63l"]
+
+[ext_resource type="Script" uid="uid://c48c221b1hjar" path="res://script/scene/tutorial.gd" id="1_p31a4"]
+[ext_resource type="Script" uid="uid://dujo5jintej16" path="res://script/scene/tutorial_handler.gd" id="2_8jxoh"]
+[ext_resource type="Script" uid="uid://c25oqncscjtya" path="res://script/thing/player.gd" id="3_mqdaa"]
+[ext_resource type="PackedScene" uid="uid://d4dexbte6jhb1" path="res://scene/ui_part/menu.tscn" id="3_nvmt1"]
+[ext_resource type="PackedScene" uid="uid://bt26t5tvqwsiq" path="res://scene/ui_part/ui_lower.tscn" id="3_won01"]
+[ext_resource type="Script" uid="uid://ds7sslwwg1866" path="res://script/scene/text_tutorial.gd" id="4_mo30s"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_p31a4")
+
+[node name="TutorialHandler" type="Node" parent="."]
+script = ExtResource("2_8jxoh")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("3_mqdaa")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="EndPoints" type="Node2D" parent="."]
+
+[node name="Unit" type="Node2D" parent="."]
+
+[node name="Tower" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ButtonBack" type="ColorRect" parent="UI"]
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="TextTutorial" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 337.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Welcome to Defense"
+script = ExtResource("4_mo30s")
+
+[node name="UILower" parent="UI" instance=ExtResource("3_won01")]
+
+[node name="Menu" parent="UI" instance=ExtResource("3_nvmt1")]
+visible = false

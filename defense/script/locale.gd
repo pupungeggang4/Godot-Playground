@@ -13,6 +13,9 @@ const data = {
         'paused': 'Paused',
         'resume': 'Resume',
         'to_title': 'Exit to title',
+        
+        'welcome': 'Welcome to defense game!',
+        'explain': 'Use cards and defend enemies!'
     },
     'ko': {
         'game_name': '디펜스 게임',
@@ -24,6 +27,9 @@ const data = {
         
         'paused': '일시정지',
         'resume': '계속하기',
-        'to_title': '타이틀 화면으로 나가기'
+        'to_title': '타이틀 화면으로 나가기',
+        
+        'welcome': '디펜스 게임에 오신 것을 환영합니다!',
+        'explain': '카드를 사용해서 몰려오는 적들을 막으세요!'
     }
 }
