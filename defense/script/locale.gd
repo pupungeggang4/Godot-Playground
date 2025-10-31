@@ -8,7 +8,11 @@ const data = {
         'tutorial': 'Tutorial',
         'lang': 'English',
         'collection': 'Collection',
-        'quit': 'Quit'
+        'quit': 'Quit',
+        
+        'paused': 'Paused',
+        'resume': 'Resume',
+        'to_title': 'Exit to title',
     },
     'ko': {
         'game_name': '디펜스 게임',
@@ -16,6 +20,10 @@ const data = {
         'tutorial': '튜토리얼',
         'lang': '한국어',
         'collection': '수집품',
-        'quit': '끝내기'
+        'quit': '끝내기',
+        
+        'paused': '일시정지',
+        'resume': '계속하기',
+        'to_title': '타이틀 화면으로 나가기'
     }
 }

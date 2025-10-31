@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4dexbte6jhb1"]
+
+[ext_resource type="Script" uid="uid://b31nk6xo71fb" path="res://script/scene/menu.gd" id="1_w4gej"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_w4gej")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 520.0
+
+[node name="TextPaused" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 220.0
+offset_right = 453.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+
+[node name="TextResume" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 300.0
+offset_right = 464.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="TextToTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 380.0
+offset_right = 516.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Exit to title"
+
+[node name="TextQuit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 460.0
+offset_right = 453.0
+offset_bottom = 505.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Exit"

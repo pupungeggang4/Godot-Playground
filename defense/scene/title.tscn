@@ -11,9 +11,9 @@ script = ExtResource("1_4fdtc")
 script = ExtResource("2_hr6ky")
 
 [node name="Background" type="ColorRect" parent="UI"]
-offset_left = 320.0
+offset_left = 160.0
 offset_top = 160.0
-offset_right = 960.0
+offset_right = 1120.0
 offset_bottom = 560.0
 
 [node name="TextTitle" type="Label" parent="UI"]
@@ -26,9 +26,9 @@ theme_override_font_sizes/font_size = 32
 text = "Defense Game"
 
 [node name="TextStart" type="Label" parent="UI"]
-offset_left = 340.0
+offset_left = 180.0
 offset_top = 180.0
-offset_right = 565.0
+offset_right = 405.0
 offset_bottom = 225.0
 theme = ExtResource("3_0npwg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -36,9 +36,9 @@ theme_override_font_sizes/font_size = 32
 text = "Start"
 
 [node name="TextTutorial" type="Label" parent="UI"]
-offset_left = 340.0
+offset_left = 180.0
 offset_top = 260.0
-offset_right = 565.0
+offset_right = 405.0
 offset_bottom = 305.0
 theme = ExtResource("3_0npwg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -46,9 +46,9 @@ theme_override_font_sizes/font_size = 32
 text = "Tutorial"
 
 [node name="TextLang" type="Label" parent="UI"]
-offset_left = 340.0
+offset_left = 180.0
 offset_top = 340.0
-offset_right = 565.0
+offset_right = 405.0
 offset_bottom = 385.0
 theme = ExtResource("3_0npwg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -56,9 +56,9 @@ theme_override_font_sizes/font_size = 32
 text = "English"
 
 [node name="TextCollection" type="Label" parent="UI"]
-offset_left = 340.0
+offset_left = 180.0
 offset_top = 420.0
-offset_right = 565.0
+offset_right = 405.0
 offset_bottom = 465.0
 theme = ExtResource("3_0npwg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -66,9 +66,9 @@ theme_override_font_sizes/font_size = 32
 text = "Collection"
 
 [node name="TextQuit" type="Label" parent="UI"]
-offset_left = 340.0
+offset_left = 180.0
 offset_top = 500.0
-offset_right = 565.0
+offset_right = 405.0
 offset_bottom = 545.0
 theme = ExtResource("3_0npwg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
