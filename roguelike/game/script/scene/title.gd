@@ -19,7 +19,7 @@ func handle_mouse():
     if Input.is_action_just_pressed('mouse'):
         var mouse = get_viewport().get_mouse_position()
         if Func.point_inside_rect_ui(mouse, UI['button_start']):
-            get_tree().change_scene_to_file('res://scene/battle.tscn')
+            get_tree().change_scene_to_file('res://scene/village.tscn')
         if Func.point_inside_rect_ui(mouse, UI['button_collection']):
             get_tree().change_scene_to_file('res://scene/collection.tscn')
         if Func.point_inside_rect_ui(mouse, UI['button_lang']):
@@ -27,7 +27,7 @@ func handle_mouse():
             GVar.locale = Locale.data[Locale.lang_list[GVar.lang]]
         if Func.point_inside_rect_ui(mouse, UI['button_erase']):
             pass
-        if Func.point_inside_rect_ui(mouse, UI['button_start']):
+        if Func.point_inside_rect_ui(mouse, UI['button_quit']):
             get_tree().quit()
     
 func handle_key():

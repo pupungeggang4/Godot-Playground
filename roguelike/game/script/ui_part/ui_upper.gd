@@ -8,7 +8,7 @@ extends Control
 @onready var text_energy = get_node('TextEnergy')
 
 func _process(delta):
-    exp_bar_full.size.x = 1240.0 * player.exp_point / player.exp_max
+    exp_bar_full.size.x = 1240.0 * player.exp_point / max(player.exp_max, 1)
     text_exp.text = 'Lv.%d Exp:%d/%d' % [player.level, player.exp_point, player.exp_max]
     text_gold.text = '%d' % [player.gold]
     text_hp.text = '%d/%d' % [player.hp, player.hp_max]

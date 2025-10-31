@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var text_lang = get_node('TextLang')
 @onready var text_erase = get_node('TextErase')
 @onready var text_quit = get_node('TextQuit')
+@onready var arrow = get_node('Arrow')
 
 func _process(delta):
     text_title.text = GVar.locale['game_name']
@@ -14,3 +15,4 @@ func _process(delta):
     text_lang.text = GVar.locale['lang']
     text_erase.text = GVar.locale['erase_data']
     text_quit.text = GVar.locale['quit']
+    arrow.position.y = 160 + GVar.selected_title * 80
