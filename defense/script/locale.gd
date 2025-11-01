@@ -15,7 +15,8 @@ const data = {
         'to_title': 'Exit to title',
         
         'welcome': 'Welcome to defense game!',
-        'explain': 'Use cards and defend enemies!'
+        'explain': 'Use cards and defend enemies!',
+        'play_card': 'Select unit card and place it into field.'
     },
     'ko': {
         'game_name': '디펜스 게임',
@@ -30,6 +31,7 @@ const data = {
         'to_title': '타이틀 화면으로 나가기',
         
         'welcome': '디펜스 게임에 오신 것을 환영합니다!',
-        'explain': '카드를 사용해서 몰려오는 적들을 막으세요!'
+        'explain': '카드를 사용해서 몰려오는 적들을 막으세요!',
+        'play_card': '유닛 카드를 선택하여 전장에 놓으세요.'
     }
 }

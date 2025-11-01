@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c48c221b1hjar" path="res://script/scene/tutorial.gd" id="1_p31a4"]
 [ext_resource type="Script" uid="uid://dujo5jintej16" path="res://script/scene/tutorial_handler.gd" id="2_8jxoh"]
-[ext_resource type="Script" uid="uid://c25oqncscjtya" path="res://script/thing/player.gd" id="3_mqdaa"]
+[ext_resource type="PackedScene" uid="uid://dapbsd4txi0bp" path="res://scene/thing/player.tscn" id="3_mo30s"]
 [ext_resource type="PackedScene" uid="uid://d4dexbte6jhb1" path="res://scene/ui_part/menu.tscn" id="3_nvmt1"]
 [ext_resource type="PackedScene" uid="uid://bt26t5tvqwsiq" path="res://scene/ui_part/ui_lower.tscn" id="3_won01"]
 [ext_resource type="Script" uid="uid://ds7sslwwg1866" path="res://script/scene/text_tutorial.gd" id="4_mo30s"]
@@ -13,8 +13,7 @@ script = ExtResource("1_p31a4")
 [node name="TutorialHandler" type="Node" parent="."]
 script = ExtResource("2_8jxoh")
 
-[node name="Player" type="Node2D" parent="."]
-script = ExtResource("3_mqdaa")
+[node name="Player" parent="." instance=ExtResource("3_mo30s")]
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

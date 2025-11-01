@@ -42,6 +42,7 @@ offset_right = 100.0
 offset_bottom = 700.0
 
 [node name="Hand" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 120.0
 offset_top = 620.0

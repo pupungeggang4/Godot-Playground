@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var hand = get_node('Hand')
+@onready var deck = get_node('Deck')
 var level = 1
 var energy = 0
 var energy_max = 6
@@ -7,7 +9,6 @@ var energy_gen = 1
 var life = 20
 
 func _process(delta):
-    print(GVar.state)
     if GVar.menu == false:
         if GVar.state == '':
             handle_lose()

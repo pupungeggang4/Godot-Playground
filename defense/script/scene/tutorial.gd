@@ -16,6 +16,9 @@ func _ready():
         temp_end_point.position.y = 240 + 80 * i
         end_points.add_child(temp_end_point)
     player.start_battle()
+    for i in range(3):
+        var temp_card = load('res://scene/thing/card.tscn').instantiate()
+        player.hand.add_child(temp_card)
 
 func _process(delta):
     pass

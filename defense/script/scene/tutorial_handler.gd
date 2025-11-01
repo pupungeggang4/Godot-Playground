@@ -17,6 +17,8 @@ func handle_mouse():
             if GVar.state == 'tutorial_break':
                 if GVar.tutorial_phase == 'welcome':
                     GVar.tutorial_phase = 'explain'
+                elif GVar.tutorial_phase == 'explain':
+                    GVar.tutorial_phase = 'play_card'
             
         elif GVar.menu == true:
             if Func.point_inside_rect_ui(mouse, UI.UI['button_resume']) or Func.point_inside_rect_ui(mouse, UI.UI['button_menu']):
