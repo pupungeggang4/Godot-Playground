@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var player = get_node('VillagePlayer')
+
 func _ready():
     GVar.state = ''
     GVar.menu = false
@@ -12,7 +14,10 @@ func handle_key():
         if Input.is_action_just_pressed('back'):
             GVar.menu = true
             GVar.selected_menu_village = 0
-        if GVar.state == 'adventure_confirm':
+        if GVar.state == '':
+            if Input.is_action_just_pressed('interact'):
+                player.field_interact()
+        elif GVar.state == 'adventure_confirm':
             if Input.is_action_just_pressed('left'):
                 GVar.selected_adventure_confirm = (GVar.selected_adventure_confirm + 1) % 2
             elif Input.is_action_just_pressed('right'):

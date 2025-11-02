@@ -13,7 +13,6 @@ func _process(delta):
     if GVar.menu == false:
         if GVar.state == '':
             move_player(delta)
-            field_interact()
             
 func move_player(delta):
     var x_pressed = false
@@ -40,7 +39,6 @@ func move_player(delta):
     position += velocity * speed * delta
 
 func field_interact():
-    if Input.is_action_just_pressed('attack'):
-        if (node_field_portal.position - position).length() < 80:
-            GVar.state = 'adventure_confirm'
-            GVar.selected_adventure_confirm = 0
+    if (node_field_portal.position - position).length() < 80:
+        GVar.state = 'adventure_confirm'
+        GVar.selected_adventure_confirm = 0

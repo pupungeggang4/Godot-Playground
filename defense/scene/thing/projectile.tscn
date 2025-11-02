@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdvoj07cd4u4k"]
+
+[ext_resource type="Script" uid="uid://b5kade3x5idmx" path="res://script/thing/projectile.gd" id="1_ximt4"]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_ximt4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0

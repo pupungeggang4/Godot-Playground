@@ -28,9 +28,9 @@ func handle_key():
         if Input.is_action_just_pressed('back'):
             GVar.menu = false
         if Input.is_action_just_pressed('up'):
-            GVar.selected_menu_battle = (GVar.selected_menu_battle + 2) % 3
+            GVar.selected_menu_battle = (GVar.selected_menu_battle + 3) % 4
         if Input.is_action_just_pressed('down'):
-            GVar.selected_menu_battle = (GVar.selected_menu_battle + 1) % 3
+            GVar.selected_menu_battle = (GVar.selected_menu_battle + 1) % 4
         if Input.is_action_just_pressed('confirm'):
             if GVar.selected_menu_battle == 0:
                 GVar.menu = false
@@ -38,6 +38,10 @@ func handle_key():
                 GVar.menu = false
                 GVar.state = 'result'
             elif GVar.selected_menu_battle == 2:
+                GVar.menu = false
+                GVar.state = ''
+                get_tree().change_scene_to_file('res://scene/title.tscn')
+            elif GVar.selected_menu_battle == 3:
                 get_tree().quit()
                 
 func handle_start():

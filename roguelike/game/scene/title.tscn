@@ -2,53 +2,76 @@
 
 [ext_resource type="Script" uid="uid://cm21nolkcijll" path="res://script/scene/title.gd" id="1_0npwg"]
 [ext_resource type="Texture2D" uid="uid://b8tc344ldgexy" path="res://image/arrow.png" id="1_4fdtc"]
-[ext_resource type="Script" uid="uid://blib8olhbkvqi" path="res://script/ui_part/arrow_title.gd" id="3_qaeh8"]
+[ext_resource type="Script" uid="uid://dqngmcdrev082" path="res://script/scene/ui_title.gd" id="2_qaeh8"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_0npwg")
 
-[node name="TextTitle" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 274.0
-offset_bottom = 69.0
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("2_qaeh8")
+
+[node name="Background" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 1120.0
+offset_bottom = 560.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 270.0
+offset_bottom = 65.0
 theme_override_font_sizes/font_size = 32
 text = "Roguelike Game"
 
-[node name="TextStart" type="Label" parent="."]
-offset_left = 184.0
-offset_top = 177.0
-offset_right = 434.0
-offset_bottom = 222.0
+[node name="TextStart" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 180.0
+offset_right = 430.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Start Game"
 
-[node name="TextCollection" type="Label" parent="."]
-offset_left = 184.0
-offset_top = 257.0
-offset_right = 434.0
-offset_bottom = 302.0
+[node name="TextCollection" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 260.0
+offset_right = 430.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Collection"
 
-[node name="TextErase" type="Label" parent="."]
-offset_left = 184.0
-offset_top = 337.0
-offset_right = 434.0
-offset_bottom = 382.0
+[node name="TextLang" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 340.0
+offset_right = 430.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "English"
+
+[node name="TextErase" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 420.0
+offset_right = 430.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Erase"
 
-[node name="TextQuit" type="Label" parent="."]
-offset_left = 184.0
-offset_top = 417.0
-offset_right = 434.0
-offset_bottom = 462.0
+[node name="TextQuit" type="Label" parent="UI"]
+offset_left = 180.0
+offset_top = 500.0
+offset_right = 430.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
-[node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(80, 160)
+[node name="Arrow" type="TextureRect" parent="UI"]
+offset_left = 80.0
+offset_top = 160.0
+offset_right = 80.0
+offset_bottom = 160.0
 texture = ExtResource("1_4fdtc")
-centered = false
-script = ExtResource("3_qaeh8")

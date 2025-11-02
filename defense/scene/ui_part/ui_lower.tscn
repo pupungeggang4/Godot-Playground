@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt26t5tvqwsiq"]
+
+[ext_resource type="Script" uid="uid://bt5hs0w3n5lkw" path="res://script/scene/ui_lower.gd" id="1_m16bp"]
+
+[node name="UILower" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m16bp")
+
+[node name="TextLevel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 560.0
+offset_right = 82.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 32
+text = "Lv.1"
+
+[node name="TextLife" type="Label" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 560.0
+offset_right = 226.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 32
+text = "20"
+
+[node name="TextEnergy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 560.0
+offset_right = 360.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 32
+text = "3.0/6"
+
+[node name="Upgrade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 620.0
+offset_right = 100.0
+offset_bottom = 700.0
+
+[node name="Hand" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 120.0
+offset_top = 620.0
+offset_right = 760.0
+offset_bottom = 700.0

@@ -1,10 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://42qn7qxl13pj"]
+[gd_scene load_steps=7 format=3 uid="uid://42qn7qxl13pj"]
 
 [ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="1_afp2b"]
 [ext_resource type="Script" uid="uid://moy1x0aqqixc" path="res://script/scene/battle_handler.gd" id="2_ffp3s"]
+[ext_resource type="PackedScene" uid="uid://dapbsd4txi0bp" path="res://scene/thing/player.tscn" id="3_0okv5"]
+[ext_resource type="PackedScene" uid="uid://d4dexbte6jhb1" path="res://scene/ui_part/menu.tscn" id="3_soyo5"]
+[ext_resource type="PackedScene" uid="uid://cqn4lvpqh83e6" path="res://scene/thing/tower.tscn" id="4_ebedk"]
+[ext_resource type="PackedScene" uid="uid://mssnqhoyurip" path="res://scene/thing/unit.tscn" id="4_q27o7"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_afp2b")
 
 [node name="BattleHandler" type="Node" parent="."]
 script = ExtResource("2_ffp3s")
+
+[node name="Player" parent="." instance=ExtResource("3_0okv5")]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="EndPoints" type="Node2D" parent="."]
+
+[node name="Unit" type="Node2D" parent="."]
+
+[node name="Unit" parent="Unit" instance=ExtResource("4_q27o7")]
+position = Vector2(886, 204)
+
+[node name="Tower" type="Node2D" parent="."]
+
+[node name="Tower" parent="Tower" instance=ExtResource("4_ebedk")]
+position = Vector2(200, 200)
+
+[node name="Projectile" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ButtonMenu" type="ColorRect" parent="UI"]
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="Menu" parent="UI" instance=ExtResource("3_soyo5")]
+visible = false
