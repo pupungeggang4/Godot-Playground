@@ -23,6 +23,8 @@ script = ExtResource("2_8jxoh")
 
 [node name="Tower" type="Node2D" parent="."]
 
+[node name="Projectiles" type="Node2D" parent="."]
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ButtonBack" type="ColorRect" parent="UI"]
