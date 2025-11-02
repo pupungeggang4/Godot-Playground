@@ -7,6 +7,7 @@ func _ready():
     GVar.menu = false
     
 func _process(delta):
+    handle_mouse()
     handle_key()
     
 func handle_key():
@@ -45,4 +46,29 @@ func handle_key():
                 GVar.menu = false
                 get_tree().change_scene_to_file('res://scene/title.tscn')
             if GVar.selected_menu_village == 2:
+                get_tree().quit()
+                
+func handle_mouse():
+    if Input.is_action_just_released('mouse'):
+        var mouse = get_viewport().get_mouse_position()
+        if GVar.menu == false:
+            if Func.point_inside_rect_ui(mouse, UI.UI['button_menu']):
+                GVar.menu = true
+            if GVar.state == '':
+                player.field_interact()
+            elif GVar.state == 'adventure_confirm':
+                if Func.point_inside_rect_ui(mouse, UI.UI['button_yes']):
+                    get_tree().change_scene_to_file('res://scene/battle.tscn')
+                    GVar.adventure.start_adventure()
+                    GVar.state = 'start'
+                    GVar.selected_adventure_start = 0
+                elif Func.point_inside_rect_ui(mouse, UI.UI['button_no']):
+                    GVar.state = ''
+        elif GVar.menu == true:
+            if Func.point_inside_rect_ui(mouse, UI.UI['button_menu_resume']):
+                GVar.menu = false
+            if Func.point_inside_rect_ui(mouse, UI.UI['button_menu_exit']):
+                GVar.menu = false
+                get_tree().change_scene_to_file('res://scene/title.tscn')
+            if Func.point_inside_rect_ui(mouse, UI.UI['button_menu_quit']):
                 get_tree().quit()
