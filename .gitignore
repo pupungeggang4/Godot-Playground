@@ -17,3 +17,4 @@ mono_crash.*.json
 *.png~
 .DS_Store
 Release/
+.nomedia
