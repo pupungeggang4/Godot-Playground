@@ -10,6 +10,8 @@ func handle_mouse():
             get_tree().change_scene_to_file("res://scene/battle.tscn")
             GVar.menu = false
             GVar.state = ''
+            GVar.player.start_adventure()
+            GVar.adventure.start_adventure()
         elif Func.point_inside_rect_ui(mouse, UI.UI['button_tutorial']):
             get_tree().change_scene_to_file("res://scene/tutorial.tscn")
             GVar.menu = false

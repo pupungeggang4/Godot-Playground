@@ -15,7 +15,7 @@ func _process(delta):
 
 func handle_attack(delta):
     if attack_cool <= 0:
-        var proj = GVar.entity.projectile.instantiate()
+        var proj = Asset.entity.projectile.instantiate()
         proj.position.x = position.x
         proj.position.y = position.y
         projectile.add_child(proj)

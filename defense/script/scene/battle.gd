@@ -16,3 +16,6 @@ func _ready():
         temp_end_point.position.x = 200
         temp_end_point.position.y = 240 + 80 * i
         end_points.add_child(temp_end_point)
+
+func _process(delta):
+    pass
