@@ -62,3 +62,21 @@ offset_right = 680.0
 offset_bottom = 200.0
 texture = ExtResource("2_610f7")
 script = ExtResource("3_610f7")
+
+[node name="ButtonOK" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 560.0
+offset_right = 720.0
+offset_bottom = 640.0
+color = Color(1, 1, 0, 1)
+
+[node name="TextOK" type="Label" parent="."]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 580.0
+offset_right = 672.0
+offset_bottom = 625.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "OK"

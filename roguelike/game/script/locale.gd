@@ -17,7 +17,8 @@ const data = {
         'adventure_confirm': 'Start Adventure?',
         'yes': 'Yes',
         'no': 'No',
-        'select_weapon': 'Select Weapon'
+        'select_weapon': 'Select Weapon',
+        'ok': 'OK',
     },
     'ko': {
         'game_name': '로그라이크 게임',
@@ -34,6 +35,7 @@ const data = {
         'adventure_confirm': '모험을 시작할까요?',
         'yes': '네',
         'no': '아니요',
-        'select_weapon': '무기 선택'
+        'select_weapon': '무기 선택',
+        'ok': '확인'
     }
 }
