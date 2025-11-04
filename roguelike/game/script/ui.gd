@@ -15,8 +15,8 @@ var UI = {
     'button_menu_quit': [320, 440, 640, 80],
     'button_start_ok': [560, 560, 160, 80],
     'button_start_weapon': [[240, 240, 160, 160], [560, 240, 160, 160], [880, 240, 160, 160]],
-    'button_menu_battle_resume': [320, 240, 320, 80],
-    'button_menu_battle_surrender': [320, 320, 320, 80],
-    'button_menu_battle_exit': [320, 400, 320, 80],
-    'button_menu_battle_quit': [320, 480, 320, 80]
+    'button_menu_battle_resume': [320, 240, 640, 80],
+    'button_menu_battle_surrender': [320, 320, 640, 80],
+    'button_menu_battle_exit': [320, 400, 640, 80],
+    'button_menu_battle_quit': [320, 480, 640, 80]
 }

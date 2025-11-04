@@ -36,3 +36,9 @@ visible = false
 
 [node name="MenuBattle" parent="UI" instance=ExtResource("2_ffp3s")]
 visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
