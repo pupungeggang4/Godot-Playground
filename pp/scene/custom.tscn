@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://tw2oikumsqo"]
+[gd_scene load_steps=3 format=3 uid="uid://tw2oikumsqo"]
+
+[ext_resource type="PackedScene" uid="uid://3fu8dgloqvud" path="res://scene/player_custom.tscn" id="1_lmjef"]
+[ext_resource type="PackedScene" uid="uid://b6aa3xh4yb6gq" path="res://scene/wall_custom.tscn" id="2_a5x3t"]
 
 [node name="Custom" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_lmjef")]
+
+[node name="WallCustom" parent="." instance=ExtResource("2_a5x3t")]

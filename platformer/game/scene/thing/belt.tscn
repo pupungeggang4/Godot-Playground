@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://gcrfhic8h0mr"]
+
+[ext_resource type="Script" uid="uid://hk7mgu11u2gx" path="res://script/thing/belt.gd" id="1_u48iy"]
+[ext_resource type="Texture2D" uid="uid://cnjd5sfdg58iu" path="res://image/thing/belt.png" id="2_lei6l"]
+
+[node name="Belt" type="Node2D"]
+script = ExtResource("1_u48iy")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("2_lei6l")
+region_enabled = true
