@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk32mlhxfaypb"]
+[gd_scene load_steps=7 format=3 uid="uid://dk32mlhxfaypb"]
 
 [ext_resource type="Script" uid="uid://cwm23k8r6ep2e" path="res://script/scene/field.gd" id="1_evxyq"]
 [ext_resource type="PackedScene" uid="uid://bacg7ob2u2h4g" path="res://scene/thing/player.tscn" id="1_odcg7"]
+[ext_resource type="Script" uid="uid://01b8eyuu5ege" path="res://script/thing/camera_2d.gd" id="3_aw5uv"]
 [ext_resource type="Script" uid="uid://cdem05js2ni5y" path="res://script/thing/level.gd" id="3_ckb0a"]
 [ext_resource type="PackedScene" uid="uid://yp467nqftmlm" path="res://scene/ui_part/menu.tscn" id="3_galdp"]
 [ext_resource type="PackedScene" uid="uid://c1c0mc0knbpyi" path="res://scene/ui_part/ui_field.tscn" id="9_4lur4"]
@@ -11,6 +12,9 @@ script = ExtResource("1_evxyq")
 
 [node name="Level" type="Node2D" parent="."]
 script = ExtResource("3_ckb0a")
+
+[node name="Camera2D" type="Camera2D" parent="Level"]
+script = ExtResource("3_aw5uv")
 
 [node name="Player" parent="Level" instance=ExtResource("1_odcg7")]
 
