@@ -3,7 +3,7 @@ extends Node2D
 class_name Entity
 @onready var entities = get_tree().current_scene.get_node('Level/Entity')
 @export var solid = false
-@export var fixed = false
+@export var fall = false
 @export var ground = false
 @export var rect = Rect2(0, 0, 0, 0)
 @export var velocity = Vector2(0, 0)

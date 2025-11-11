@@ -9,7 +9,7 @@ var coin = 0
 
 func _ready():
     solid = false
-    fixed = false
+    fall = false
     rect.size = Vector2(80, 80)
     rect.position = position
     

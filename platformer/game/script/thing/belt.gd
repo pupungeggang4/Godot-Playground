@@ -4,7 +4,7 @@ extends Wall
 
 func _ready():
     solid = true
-    fixed = true
+    fall = true
     position = rect.position
     get_node('Sprite').region_rect = Rect2(0, 0, rect.size.x, rect.size.y)
 

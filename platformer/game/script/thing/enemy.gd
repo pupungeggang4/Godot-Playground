@@ -5,7 +5,7 @@ extends Entity
 
 func _ready():
     solid = false
-    fixed = false
+    fall = true
     position = rect.position
 
 func _process(delta):
