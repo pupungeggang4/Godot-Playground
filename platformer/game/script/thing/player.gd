@@ -29,6 +29,21 @@ func move_player(delta):
     if Input.is_action_pressed('right'):
         velocity.x += speed
     position.x += velocity.x * delta
+    rect.position.x = position.x
+    rect.position.y = position.y
+    
+    for entity in entities.get_children():
+        if entity.solid == true:
+            var left = Physics.collide_from_left(entity.rect, rect)
+            if left > 0:
+                position.y -= left
+                velocity.y = 0
+                break
+            var right = Physics.collide_from_right(entity.rect, rect)
+            if right > 0:
+                position.y -= right
+                velocity.y = 0
+                break
     
     if velocity.y < terminal_speed:
         velocity.y += gravity * delta
@@ -36,14 +51,23 @@ func move_player(delta):
     rect.position.x = position.x
     rect.position.y = position.y
     
+    if velocity.y > 0:
+        for entity in entities.get_children():
+            if entity.solid == true:
+                var fall_top = Physics.detect_fall_on_top(entity.rect, rect)
+                if fall_top > 0:
+                    position.y -= fall_top
+                    velocity.y = 0
+                    ground = true
+                    entity.handle_step(self, delta)
+                    break
+                    
     for entity in entities.get_children():
         if entity.solid == true:
-            var fall_top = Physics.detect_fall_on_top(entity.rect, rect)
-            if fall_top > 0:
-                position.y -= fall_top
+            var bottom = Physics.detect_from_bottom(entity.rect, rect)
+            if bottom > 0:
+                position.y += bottom
                 velocity.y = 0
-                ground = true
-                entity.handle_step(self, delta)
                 break
     
     if Input.is_action_pressed('up'):
