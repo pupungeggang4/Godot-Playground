@@ -23,3 +23,8 @@ func load_level(level, path):
             var tmp = load('res://scene/thing/coin.tscn').instantiate()
             tmp.position = Vector2(parsed['entity'][i][1][0], parsed['entity'][i][1][1])
             entity.add_child(tmp)
+            
+        if parsed['entity'][i][0] == 'enemy':
+            var tmp = load('res://scene/thing/enemy.tscn').instantiate()
+            tmp.rect = Rect2(parsed['entity'][i][1][0], parsed['entity'][i][1][1], parsed['entity'][i][1][2], parsed['entity'][i][1][3])
+            entity.add_child(tmp)
