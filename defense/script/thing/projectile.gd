@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var unit = get_tree().current_scene.get_node('Unit')
+@onready var collision_shape = get_node('Area2D/CollisionShape2D')
 
 var side = 0
 var velocity = Vector2(1.0, 0.0)
@@ -14,15 +14,14 @@ func _process(delta):
     if GVar.menu == false:
         if GVar.state == '':
             move(delta)
-            
-func collide_check():
-    if side == 0:
-        for u in unit.get_children():
-            if (u.position - position).length() < 40:
-                u.hp -= damage
-                queue_free()
-        if position.x >= 1200 or position.x <= 80:
-            queue_free()
 
 func move(delta):
     position.x += velocity.x * speed * delta
+    if position.x >= 1200 or position.x <= 80:
+        queue_free()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+    var unit = area.get_parent()
+    unit.hp -= damage
+    queue_free()
+    

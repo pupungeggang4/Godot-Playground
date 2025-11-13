@@ -12,4 +12,5 @@ const UI = {
     'button_resume': [320, 280, 640, 80],
     'button_to_title': [320, 360, 640, 80],
     'button_quit_game': [320, 440, 640, 80],
+    'field_area': [240, 200, 800, 320],
 }

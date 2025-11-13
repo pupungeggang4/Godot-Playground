@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://chk6g66wrc0b"]
+
+[ext_resource type="Script" uid="uid://bihx41r4i1scc" path="res://script/engine/rigid.gd" id="1_g04vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdc3v"]
+
+[node name="Rigidbody" type="Node2D"]
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+position = Vector2(400, 400)
+script = ExtResource("1_g04vg")
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_mdc3v")

@@ -23,12 +23,15 @@ script = ExtResource("2_ffp3s")
 [node name="Unit" type="Node2D" parent="."]
 
 [node name="Unit" parent="Unit" instance=ExtResource("4_q27o7")]
-position = Vector2(886, 204)
+position = Vector2(886, 240)
 
 [node name="Tower" type="Node2D" parent="."]
 
 [node name="Tower" parent="Tower" instance=ExtResource("4_ebedk")]
-position = Vector2(200, 200)
+position = Vector2(280, 240)
+
+[node name="Tower2" parent="Tower" instance=ExtResource("4_ebedk")]
+position = Vector2(680, 240)
 
 [node name="Projectile" type="Node2D" parent="."]
 
