@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc83umxuw7v4u"]
+
+[ext_resource type="Texture2D" uid="uid://8xe6vdnuyehx" path="res://icon.svg" id="1_nxogm"]
+[ext_resource type="Script" uid="uid://bv4gjodjb6aau" path="res://player.gd" id="2_3253y"]
+[ext_resource type="Script" uid="uid://b8pp188fuwmov" path="res://polygon_2d_2.gd" id="3_3253y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxogm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3253y"]
+blend_mode = 2
+
+[node name="Scene" type="Node2D"]
+
+[node name="Player2" type="Sprite2D" parent="."]
+position = Vector2(992, 497)
+texture = ExtResource("1_nxogm")
+
+[node name="Player3" type="Sprite2D" parent="."]
+position = Vector2(378, 113)
+texture = ExtResource("1_nxogm")
+
+[node name="Player4" type="Sprite2D" parent="."]
+position = Vector2(176, 557)
+texture = ExtResource("1_nxogm")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_nxogm")
+script = ExtResource("2_3253y")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasGroup"]
+material = SubResource("CanvasItemMaterial_nxogm")
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 720, 1280, 720, 1280, 0, 0, 0)
+
+[node name="Polygon2D2" type="Polygon2D" parent="CanvasGroup"]
+material = SubResource("CanvasItemMaterial_3253y")
+polygon = PackedVector2Array(-160, -160, -160, 160, 160, 160, 160, -160)
+script = ExtResource("3_3253y")
