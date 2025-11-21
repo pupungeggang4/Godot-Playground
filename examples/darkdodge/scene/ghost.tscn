@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjon60e5mmvyh"]
+
+[ext_resource type="Texture2D" uid="uid://buwdnhf1nd60m" path="res://image/ghost.png" id="1_2qtq6"]
+[ext_resource type="Script" uid="uid://o2oks1g5meom" path="res://script/ghost.gd" id="1_wc8ux"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2qtq6"]
+light_mode = 1
+
+[node name="Ghost" type="Node2D"]
+script = ExtResource("1_wc8ux")
+
+[node name="Ghost" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_2qtq6")
+texture = ExtResource("1_2qtq6")

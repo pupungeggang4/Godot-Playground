@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://dt313wg2imqoo"]
+
+[ext_resource type="PackedScene" uid="uid://gun7os6v35mo" path="res://scene/dark.tscn" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://cs4sylc17t1ta" path="res://script/main.gd" id="1_p1hux"]
+[ext_resource type="Texture2D" uid="uid://bqjy5ga1b1fsf" path="res://image/player.png" id="2_v0l8b"]
+[ext_resource type="Script" uid="uid://doqv0gud5sihm" path="res://script/player.gd" id="3_wp4xf"]
+[ext_resource type="Script" uid="uid://ybm3md8jq3nq" path="res://script/enemy_list.gd" id="4_4j5ol"]
+[ext_resource type="Script" uid="uid://gphaeeled3ob" path="res://script/text_time.gd" id="5_0ha60"]
+[ext_resource type="Script" uid="uid://cwcua42lor5u0" path="res://script/text_game_over.gd" id="5_4j5ol"]
+
+[sub_resource type="Gradient" id="Gradient_no8bm"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_itxqv"]
+gradient = SubResource("Gradient_no8bm")
+width = 1280
+height = 720
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_brvut"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_xdrp5"]
+offsets = PackedFloat32Array(0.6933529, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4j5ol"]
+gradient = SubResource("Gradient_xdrp5")
+width = 540
+height = 540
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.6, 0)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_p1hux")
+
+[node name="Bg" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_itxqv")
+centered = false
+
+[node name="Dark" parent="." instance=ExtResource("1_itxqv")]
+
+[node name="Player" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_brvut")
+texture = ExtResource("2_v0l8b")
+script = ExtResource("3_wp4xf")
+
+[node name="PlayerLight" type="PointLight2D" parent="Player"]
+texture = SubResource("GradientTexture2D_4j5ol")
+
+[node name="EnemyList" type="Node2D" parent="."]
+script = ExtResource("4_4j5ol")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 660.0
+offset_right = 180.0
+offset_bottom = 700.0
+
+[node name="TextGameOver" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 660.0
+offset_right = 64.0
+offset_bottom = 705.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+script = ExtResource("5_4j5ol")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 60.0
+
+[node name="TextTime" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 64.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+script = ExtResource("5_0ha60")

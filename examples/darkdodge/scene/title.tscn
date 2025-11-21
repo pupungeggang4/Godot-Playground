@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://blotb6boekrtb"]
+
+[ext_resource type="Script" uid="uid://dpdxdq5t6d6tc" path="res://script/title.gd" id="1_0npwg"]
+[ext_resource type="Texture2D" uid="uid://desknafwl5ci" path="res://image/enemy.png" id="1_hr6ky"]
+[ext_resource type="Texture2D" uid="uid://buwdnhf1nd60m" path="res://image/ghost.png" id="2_0npwg"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_0npwg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TextGameTitle" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 213.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Dodge game"
+
+[node name="TextControl" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 533.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "[WASD] Move [Space] Toggle light"
+
+[node name="TextDodge" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 220.0
+offset_right = 213.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Dodge"
+
+[node name="TextLight" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 320.0
+offset_right = 236.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Visible in light"
+
+[node name="TextDark" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 420.0
+offset_right = 238.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Visible in dark"
+
+[node name="TextStart" type="Label" parent="."]
+offset_top = 640.0
+offset_right = 1280.0
+offset_bottom = 685.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Press Enter to Start."
+horizontal_alignment = 1
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(280, 200)
+texture = ExtResource("1_hr6ky")
+centered = false
+
+[node name="Enemy2" type="Sprite2D" parent="."]
+position = Vector2(280, 300)
+texture = ExtResource("1_hr6ky")
+centered = false
+
+[node name="Ghost1" type="ColorRect" parent="."]
+offset_left = 180.0
+offset_top = 200.0
+offset_right = 260.0
+offset_bottom = 280.0
+color = Color(0, 0, 0, 1)
+
+[node name="Ghost" type="Sprite2D" parent="Ghost1"]
+texture = ExtResource("2_0npwg")
+centered = false
+
+[node name="Ghost2" type="ColorRect" parent="."]
+offset_left = 280.0
+offset_top = 400.0
+offset_right = 360.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Ghost" type="Sprite2D" parent="Ghost2"]
+texture = ExtResource("2_0npwg")
+centered = false
